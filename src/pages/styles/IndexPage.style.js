@@ -27,6 +27,20 @@ export const BannerSection = styled.div`
   }
 `;
 
+export const BannerImg = styled.img.attrs({
+  src: `${HANGANG_MAIN_IMG}`,
+  alt: "banner-img",
+})`
+  position: absolute;
+
+  right: 0;
+  fill-opacity: 0;
+
+  @media screen and (max-width: calc(${DefaultContentWidth} + 20px)) {
+    margin-right: 20px;
+  }
+`;
+
 export const SubjectSection = styled.div`
   position: absolute;
   left: 0;
@@ -48,19 +62,4 @@ export const SubjectNormal = styled.h3`
   font-size: 18px;
   font-weight: normal;
   color: ${FontColor};
-`;
-
-export const BannerImg = styled.img.attrs({
-  src: `${HANGANG_MAIN_IMG}`,
-  alt: "banner-img",
-})`
-  position: absolute;
-
-  right: 0;
-  fill-opacity: 0;
-
-  @media screen and (max-width: calc(${DefaultContentWidth} + 20px)) {
-    position: fixed;
-    margin-right: 20px;
-  }
 `;
