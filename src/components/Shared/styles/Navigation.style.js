@@ -42,8 +42,8 @@ export const Logo = styled.img.attrs({
 
   @media screen and (max-width: 630px) {
     position: relative;
-    height: 23px;
-    left: -13px;
+    height: 28px;
+    left: -8px;
   }
 `;
 
