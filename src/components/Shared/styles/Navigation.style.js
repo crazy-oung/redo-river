@@ -1,12 +1,20 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import {
   BorderColor,
   PrimaryColor,
+  PlaceholderColor,
   DefaultContentWidth,
 } from "../../../static/Shared/commonStyles";
-import { HANGANG_LOGO } from "../../../static/Shared/commonUrls";
+import {
+  HANGANG_LOGO,
+  HOME_ICON,
+  LECTURE_REVIEW_ICON,
+  LECTURE_RESOURCE_ICON,
+  TIMETABLE_ICON,
+  USER_ICON,
+} from "../../../static/Shared/commonUrls";
 
 export const NavigationWrapper = styled.nav`
   display: flex;
@@ -24,12 +32,30 @@ export const NavigationWrapper = styled.nav`
   }
 `;
 
-export const NavigationItemSection = styled.div`
+export const NavigationSectionDesktop = styled.div`
   display: flex;
   position: relative;
   width: ${DefaultContentWidth};
   height: 100%;
   align-items: center;
+`;
+
+export const NavigationSectionMobile = styled.div`
+  display: none;
+  position: fixed;
+  width: auto;
+  height: 72px;
+  bottom: 0;
+  align-items: center;
+  border-top: 1.5px solid ${BorderColor};
+
+  @media screen and (max-width: 630px) {
+    display: flex;
+    width: 100%;
+    padding: 16px 0;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 `;
 
 export const Logo = styled.img.attrs({
@@ -55,11 +81,11 @@ export const LinkSection = styled.div`
   }
 `;
 
-export const StyledLinkWrapper = styled.div`
+export const ShortcutSection = styled.div`
   display: flex;
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledNavLink = styled(NavLink)`
   all: unset;
   display: flex;
   width: 107px;
@@ -67,6 +93,16 @@ export const StyledLink = styled(Link)`
   justify-content: center;
   font-size: 17px;
   cursor: pointer;
+
+  @media screen and (max-width: 630px) {
+    width: calc(100% / 5);
+    color: ${PlaceholderColor};
+    font-size: 11px;
+  }
+
+  &.selected {
+    color: ${PrimaryColor};
+  }
 `;
 
 export const MenuFocusedOn = styled.div`
@@ -76,6 +112,12 @@ export const MenuFocusedOn = styled.div`
   height: 2px;
   bottom: -1px;
   background-color: ${PrimaryColor};
+
+  @media screen and (max-width: 630px) {
+    width: calc(100% / 5);
+    left: 0;
+    bottom: 70px;
+  }
 `;
 
 export const AuthSection = styled.div`
@@ -95,7 +137,7 @@ export const CenterLine = styled.div`
   background-color: #dadada;
 `;
 
-export const Item = styled(Link)`
+export const AuthSectionLink = styled(Link)`
   all: unset;
   position: relative;
   top: -1px;
@@ -104,4 +146,71 @@ export const Item = styled(Link)`
   font-size: 15px;
   line-height: 20px;
   cursor: pointer;
+`;
+
+// Icons
+export const HomeIcon = styled.div`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 16px;
+
+  background-color: ${({ isFocused }) =>
+    isFocused ? `${PrimaryColor}` : `${PlaceholderColor}`};
+
+  -webkit-mask: url(${HOME_ICON}) no-repeat center;
+  mask: url(${HOME_ICON}) no-repeat center;
+}
+`;
+
+export const LectureReviewIcon = styled.div`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 16px;
+  background-color: ${({ isFocused }) =>
+    isFocused ? `${PrimaryColor}` : `${PlaceholderColor}`};
+
+  -webkit-mask: url(${LECTURE_REVIEW_ICON}) no-repeat center;
+  mask: url(${LECTURE_REVIEW_ICON}) no-repeat center;
+}
+`;
+
+export const LectureResourceIcon = styled.div`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 16px;
+  background-color: ${({ isFocused }) =>
+    isFocused ? `${PrimaryColor}` : `${PlaceholderColor}`};
+
+  -webkit-mask: url(${LECTURE_RESOURCE_ICON}) no-repeat center;
+  mask: url(${LECTURE_RESOURCE_ICON}) no-repeat center;
+}
+`;
+
+export const TimetableIcon = styled.div`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 16px;
+  background-color: ${({ isFocused }) =>
+    isFocused ? `${PrimaryColor}` : `${PlaceholderColor}`};
+
+  -webkit-mask: url(${TIMETABLE_ICON}) no-repeat center;
+  mask: url(${TIMETABLE_ICON}) no-repeat center;
+}
+`;
+
+export const MypageIcon = styled.div`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 16px;
+  background-color: ${({ isFocused }) =>
+    isFocused ? `${PrimaryColor}` : `${PlaceholderColor}`};
+
+  -webkit-mask: url(${USER_ICON}) no-repeat center;
+  mask: url(${USER_ICON}) no-repeat center;
+}
 `;
