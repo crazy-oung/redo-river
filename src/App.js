@@ -3,8 +3,8 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { GlobalStyle, Main } from "./GlobalStyle";
 
 import Navigation from "./components/Shared/Navigation";
-import Footer from "./components/Shared/Footer";
 import IndexPage from "./pages/IndexPage";
+import Footer from "./components/Shared/Footer";
 
 const App = () => {
   return (
