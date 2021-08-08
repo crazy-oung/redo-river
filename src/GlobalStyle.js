@@ -42,6 +42,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Main = styled.main`
+  min-height: 900px;
   height: fit-content;
   min-width: ${DefaultContentWidth};
   padding: 0 20px;
@@ -54,6 +55,6 @@ export const Main = styled.main`
 
   @media screen and (max-width: 630px) {
     min-width: auto;
-    min-height: 1080px;
+    min-height: auto;
   }
 `;

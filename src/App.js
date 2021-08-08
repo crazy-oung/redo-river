@@ -4,6 +4,7 @@ import { GlobalStyle, Main } from "./GlobalStyle";
 
 import Navigation from "./components/Shared/Navigation";
 import IndexPage from "./pages/IndexPage";
+import Footer from "./components/Shared/Footer";
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
           <Redirect from="*" to="/" />
         </Switch>
       </Main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
