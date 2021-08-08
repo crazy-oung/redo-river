@@ -46,9 +46,11 @@ export const NavigationSectionMobile = styled.div`
   width: auto;
   height: 72px;
   bottom: 0;
-  align-items: center;
+  background: #fff;
   border-top: 1.5px solid ${BorderColor};
 
+  align-items: center;
+  z-index: 10;
   @media screen and (max-width: 630px) {
     display: flex;
     width: 100%;
