@@ -3,7 +3,6 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { GlobalStyle, Main } from "./GlobalStyle";
 
 import Navigation from "./components/Shared/Navigation";
-import Footer from "./components/Shared/Footer";
 import IndexPage from "./pages/IndexPage";
 
 const App = () => {
@@ -17,7 +16,7 @@ const App = () => {
           <Redirect from="*" to="/" />
         </Switch>
       </Main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
