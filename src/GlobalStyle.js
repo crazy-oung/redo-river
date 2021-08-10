@@ -22,6 +22,12 @@ export const GlobalStyle = createGlobalStyle`
       font-style: normal;
       src: url(assets/font/NanumSquareRound/NanumSquareRoundOTFR.otf) format('opentype');
   }
+  @font-face {
+    font-family: 'SegoeUI';
+    font-style: normal;
+    font-weight: normal;
+    src: url(assets/font/SegoeUI/SegoeUI.woff) format('woff'); 
+  }
 
   *{
       -webkit-box-sizing: border-box;
