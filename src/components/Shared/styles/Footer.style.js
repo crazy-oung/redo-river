@@ -5,7 +5,7 @@ import { DefaultContentWidth } from "../../../static/Shared/commonStyles";
 import {
   HANGANG_FOOTER_LOGO,
   FACEBOOK_ICON,
-  HOME_ICON,
+  FOOTER_HOME_ICON,
 } from "../../../static/Shared/commonUrls";
 
 export const FooterWrapper = styled.footer`
@@ -30,20 +30,20 @@ export const FooterContent = styled.div`
 `;
 
 export const LeftSection = styled.div`
-  width: 80px;
+  width: 96px;
   height: fit-content;
 `;
 
 export const CenterSection = styled.div`
   display: flex;
-  width: 668px;
-
+  width: 752px;
+  padding: 0 53px;
   flex-direction: column;
   align-items: center;
 `;
 
 export const RightSection = styled.div`
-  width: 80px;
+  width: 96px;
   height: fit-content;
 `;
 
@@ -70,17 +70,23 @@ export const ExternalSection = styled.div`
 `;
 
 export const ExternalSectionButton = styled.button`
-  font-size: 15px;
-  border: 1px solid #c9c9c9;
-  border-radius: 15px;
-  padding: 4px 17px;
+  padding: 3.5px 13.5px;
   background-color: transparent;
+  border: 0.5px solid #9fa9b3;
+
+  border-radius: 15px;
 `;
 
-export const ExternalLink = styled.a`
+export const ExternalLink = styled(Link)`
+  padding: 3.5px 13.5px 3.5px;
   all: unset;
-  font-size: 15px;
+  position: relative;
+  top: 2px;
   color: #c9c9c9;
+
+  font-size: 15px;
+  line-height: normal;
+  letter-spacing: normal;
   cursor: pointer;
 `;
 
@@ -101,7 +107,7 @@ export const FacebookIcon = styled.img.attrs({
 `;
 
 export const HomeIcon = styled.img.attrs({
-  src: HOME_ICON,
+  src: FOOTER_HOME_ICON,
   alt: "홈",
 })`
   width: 27px;
@@ -109,6 +115,14 @@ export const HomeIcon = styled.img.attrs({
 `;
 
 export const CopyRight = styled.span`
-  font-size: 12px;
+  position: absolute;
+  bottom: 30px;
+
   color: #b5b5b5;
+
+  font-family: SegoeUI;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
 `;

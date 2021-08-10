@@ -7,9 +7,13 @@ import {
 } from "../../static/Shared/commonStyles";
 
 export const Wrapper = styled.div`
-  width: fit-content;
+  width: ${DefaultContentWidth};
   height: fit-content;
   margin: 40px auto 100px auto;
+
+  @media screen and (max-width: calc(${DefaultContentWidth} + 20px)) {
+    margin: 40px 0 100px 0;
+  }
 
   @media screen and (max-width: 630px) {
     width: auto;
@@ -19,12 +23,41 @@ export const Wrapper = styled.div`
 
 export const BannerSection = styled.div`
   position: relative;
-  min-width: ${DefaultContentWidth};
+  width: 100%;
   height: 289px;
+
+  @media screen and (max-width: calc(${DefaultContentWidth} + 20px)) {
+    width: 100vw;
+  }
 
   @media screen and (max-width: 630px) {
     display: none;
   }
+`;
+
+export const TitleSection = styled.div`
+  display: flex;
+  position: absolute;
+
+  margin-bottom: 40px;
+  left: 0;
+  bottom: 0;
+  flex-direction: column;
+`;
+
+export const TitleBold = styled.h1`
+  margin-top: 16px;
+  font-size: 36px;
+  font-weight: 800;
+  font-family: "NanumSquareRound";
+  color: ${FontColor};
+`;
+
+export const TitleNormal = styled.h3`
+  font-size: 18px;
+  font-weight: normal;
+  font-family: "NanumSquareRound";
+  color: ${FontColor};
 `;
 
 export const BannerImg = styled.img.attrs({
@@ -37,29 +70,6 @@ export const BannerImg = styled.img.attrs({
   fill-opacity: 0;
 
   @media screen and (max-width: calc(${DefaultContentWidth} + 20px)) {
-    margin-right: 20px;
+    right: 20px;
   }
-`;
-
-export const SubjectSection = styled.div`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  width: 240px;
-  margin-bottom: 40px;
-`;
-
-export const SubjectBold = styled.h1`
-  margin-top: 16px;
-  font-size: 36px;
-  font-weight: 800;
-  color: ${FontColor};
-`;
-
-export const SubjectNormal = styled.h3`
-  font-size: 18px;
-  font-weight: normal;
-  color: ${FontColor};
 `;

@@ -3,26 +3,53 @@ import reset from "styled-reset";
 import { DefaultContentWidth } from "./static/Shared/commonStyles";
 
 export const GlobalStyle = createGlobalStyle`
-    ${reset}
-    @font-face {
-        font-family: "Noto Sans KR";
-        src: url("'https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'") format("opentype");
-        font-style: normal;
-        font-weight: normal;
-    }
-    *{
-        box-sizing:border-box;
-    }
-    html, body, #root{
-        font-family: 'Noto Sans KR', sans-serif;
-        height:100%;
-        width:100%;
-    }
+  ${reset}
+  @font-face {
+      font-family: 'NotoSansCJKKR';
+      font-weight: normal; 
+      font-style: normal;
+      src: url(assets/font/NotoSansCJKKR/NotoSansCJKkr-Regular.otf) format('opentype');
+  }
+  @font-face {
+      font-family: 'NanumSquareRound';
+      font-weight: 800; 
+      font-style: normal;
+      src: url(assets/font/NanumSquareRound/NanumSquareRoundOTFEB.otf) format('opentype');
+  }
+  @font-face {
+      font-family: 'NanumSquareRound';
+      font-weight: normal; 
+      font-style: normal;
+      src: url(assets/font/NanumSquareRound/NanumSquareRoundOTFR.otf) format('opentype');
+  }
+  @font-face {
+    font-family: 'SegoeUI';
+    font-style: normal;
+    font-weight: normal;
+    src: url(assets/font/SegoeUI/SegoeUI.woff) format('woff'); 
+  }
+
+  *{
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  *:before,
+  *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  html, body, #root{
+    font-family: 'NotoSansCJKKR', 'Noto Sans', sans-serif;
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 export const Main = styled.main`
+  min-height: 900px;
   height: fit-content;
-  min-height: 1080px;
   min-width: ${DefaultContentWidth};
   padding: 0 20px;
 
@@ -34,5 +61,6 @@ export const Main = styled.main`
 
   @media screen and (max-width: 630px) {
     min-width: auto;
+    min-height: auto;
   }
 `;
