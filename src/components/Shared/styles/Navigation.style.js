@@ -26,7 +26,7 @@ export const NavigationWrapper = styled.nav`
   border-bottom: 1px solid ${BorderColor};
   justify-content: center;
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 768px) {
     border-bottom: none;
     padding: 0 20px;
   }
@@ -51,7 +51,7 @@ export const NavigationSectionMobile = styled.div`
 
   align-items: center;
   z-index: 10;
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 768px) {
     display: flex;
     width: 100%;
     padding: 16px 0;
@@ -68,7 +68,7 @@ export const Logo = styled.img.attrs({
   margin-right: 40px;
   cursor: pointer;
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 768px) {
     position: relative;
     height: 28px;
     left: -8px;
@@ -78,7 +78,7 @@ export const Logo = styled.img.attrs({
 export const LinkSection = styled.div`
   display: flex;
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -96,7 +96,7 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 17px;
   cursor: pointer;
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 768px) {
     width: calc(100% / 5);
     color: ${PlaceholderColor};
     font-size: 11px;
@@ -115,7 +115,7 @@ export const MenuFocusedOn = styled.div`
   bottom: -1px;
   background-color: ${PrimaryColor};
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 768px) {
     width: calc(100% / 5);
     left: 0;
     bottom: 70px;
