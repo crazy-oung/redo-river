@@ -31,6 +31,10 @@ export const BannerSection = styled.section`
   width: 100%;
   height: 289px;
 
+  @media screen and (max-width: calc(${DefaultContentWidth} + 20px)) {
+    width: 100vw;
+  }
+
   @media screen and (max-width: 630px) {
     display: none;
   }
