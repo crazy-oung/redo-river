@@ -1,6 +1,8 @@
 export const DefaultContentWidth = "1136px";
 
 export const PrimaryColor = "#238bfe";
+export const NoticeColor = "#ffab2e";
+
 export const PrimaryHoverColor = "#144e77";
 
 export const NonClickPrimaryButtonColor = "#bddcff";

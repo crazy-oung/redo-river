@@ -23,6 +23,13 @@ export const GlobalStyle = createGlobalStyle`
       src: url(assets/font/NanumSquareRound/NanumSquareRoundOTFR.otf) format('opentype');
   }
 
+  @font-face {
+    font-family: 'SegoeUI';
+    font-style: normal;
+    font-weight: normal;
+    src: url(assets/font/SegoeUI/SegoeUI.woff) format('woff'); 
+  }
+
   *{
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -35,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   html, body, #root{
-    font-family: 'NotoSansCJKKR', 'Noto Sans', sans-serif;
+    font-family: 'NotoSansCJKKR', 'Noto Sans KR', 'Noto Sans', sans-serif;
     height: 100%;
     width: 100%;
   }
@@ -43,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Main = styled.main`
   min-height: 900px;
-  height: fit-content;
+
   min-width: ${DefaultContentWidth};
   padding: 0 20px;
 
@@ -54,7 +61,7 @@ export const Main = styled.main`
   user-select: none;
 
   @media screen and (max-width: 630px) {
-    min-width: auto;
-    min-height: auto;
+    min-width: 320px;
+    height: inherit;
   }
 `;

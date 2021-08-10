@@ -1,13 +1,14 @@
 import styled from "styled-components";
-
-import { HANGANG_MAIN_IMG } from "../../static/Shared/commonUrls";
+import { Link } from "react-router-dom";
+import { HANGANG_MAIN_IMG } from "../../../static/Shared/commonUrls";
 import {
   FontColor,
   DefaultContentWidth,
   BorderColor,
   PrimaryColor,
+  NoticeColor,
   PlaceholderColor,
-} from "../../static/Shared/commonStyles";
+} from "../../../static/Shared/commonStyles";
 
 export const Wrapper = styled.div`
   width: ${DefaultContentWidth};
@@ -21,24 +22,21 @@ export const Wrapper = styled.div`
   @media screen and (max-width: 630px) {
     width: auto;
     margin: auto;
+    min-height: calc(100% + 252px + 32px);
   }
 `;
 
-export const BannerSection = styled.div`
+export const BannerSection = styled.section`
   position: relative;
   width: 100%;
   height: 289px;
-
-  @media screen and (max-width: calc(${DefaultContentWidth} + 20px)) {
-    width: 100vw;
-  }
 
   @media screen and (max-width: 630px) {
     display: none;
   }
 `;
 
-export const TitleSection = styled.div`
+export const TitleSection = styled.aside`
   display: flex;
   position: absolute;
 
@@ -78,12 +76,14 @@ export const BannerImg = styled.img.attrs({
 `;
 
 // major seacrh
-export const MajorSearchSection = styled.div`
+export const MajorSearchSection = styled.section`
   width: 100%;
+  margin-bottom: 32px;
 
   @media screen and (max-width: 630px) {
     position: relative;
-    top: 406px;
+    margin-bottom: 24px;
+    top: 404px;
   }
 `;
 
@@ -91,14 +91,18 @@ export const SectionTitle = styled.h4`
   color: ${FontColor};
   font-size: 16px;
   font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
 `;
 
 export const MajorSearchContent = styled.div`
   width: 100%;
-  margin-bottom: 24px;
+  margin-top: 16px;
 
   @media screen and (max-width: 630px) {
     width: calc(100% + 20px);
+    margin-top: 0;
     margin-bottom: 32px;
     overflow-x: scroll;
     -ms-overflow-style: none; /* IE and Edge */
@@ -110,12 +114,11 @@ export const MajorSearchContent = styled.div`
   }
 `;
 
-export const MajorSearchContentBox = styled.div`
+export const MajorSearchContentList = styled.ul`
   width: 100%;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 16px;
 
   @media screen and (max-width: calc(${DefaultContentWidth} + 20px)) {
     width: fit-content;
@@ -124,18 +127,12 @@ export const MajorSearchContentBox = styled.div`
   }
 `;
 
-export const MajorShortcut = styled.div`
+export const MajorShortcut = styled.li`
   all: unset;
   position: relative;
 
   width: 100px;
   height: 87px;
-
-  background-image: url(${({ img }) => img});
-  background-size: 100px 97px;
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  cursor: pointer;
 
   @media screen and (max-width: calc(${DefaultContentWidth} + 20px)) {
     margin-right: 15px;
@@ -150,21 +147,51 @@ export const MajorShortcut = styled.div`
   }
 `;
 
-export const MajorName = styled.span`
-  position: absolute;
-  left: calc(50% - 34px);
-  bottom: 5px;
-  width: 68px;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.4;
-  color: #fff;
-  text-align: center;
+export const MajorCard = styled(Link)`
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url(${({ img }) => img});
+  background-position-y: -7px;
+  background-size: 100px 101px;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+
   cursor: pointer;
+
+  :before {
+    all: unset;
+
+    position: absolute;
+    width: 68px;
+    left: calc(50% - 34px);
+    bottom: 9px;
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    text-align: center;
+    word-break: break-all;
+    white-space: initial;
+
+    cursor: pointer;
+    content: "${({ majorName }) => majorName}";
+  }
+
+  @media screen and (max-width: 630px) {
+    margin-right: 8px;
+
+    background-size: 87px 87px;
+    background-position-y: 0;
+  }
 `;
 
 // rankings
-export const LectureRankingSection = styled.div`
+export const DashBoardContentBox = styled.div`
   width: 100%;
   margin-top: 16px;
   border: 1px solid ${BorderColor};
@@ -175,7 +202,22 @@ export const LectureRankingSection = styled.div`
   }
 `;
 
-export const LectureRankingDeptMenu = styled.div`
+export const DashboardRightContentBox = styled(DashBoardContentBox)`
+  display: flex;
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+  min-height: 183px;
+
+  @media screen and (max-width: 630px) {
+    margin-top: 8px;
+    min-height: auto;
+    flex-wrap: wrap;
+  }
+`;
+
+export const LectureRankingDeptMenu = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -199,29 +241,42 @@ export const LectureRankingDeptMenu = styled.div`
 // border-bottom: 2px solid transparent;
 // TODO: 선택한 과목 포커싱처리
 
-export const Department = styled.div`
+export const Department = styled.li`
   box-sizing: content-box;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 7px;
+  padding: 0 4px;
+  top: 12px;
   height: 100%;
 
-  border-bottom: 2px solid #ffab2e;
+  span {
+    color: ${PrimaryColor};
+  }
 
   @media screen and (max-width: 630px) {
     width: fit-content;
     padding-right: 12px;
-    padding-bottom: 5px;
+
     white-space: nowrap;
   }
 `;
 
 export const DepartmentName = styled.span`
-  height: 18px;
+  color: ${PlaceholderColor};
   font-size: 12px;
-  padding-top: 6px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  font-style: normal;
   cursor: pointer;
+
+  :before {
+    content: "${({ name }) =>
+      name.length > 4
+        ? name.split("·")[0][0] + "·" + name.split("·")[1][0]
+        : name}";
+  }
 
   @media screen and (max-width: 630px) {
     width: max-content;
@@ -229,10 +284,33 @@ export const DepartmentName = styled.span`
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
+
+    :before {
+      content: "${({ name }) => name}";
+    }
   }
 `;
 
-export const LectureRow = styled.div`
+export const MenuFocusedOn = styled.div`
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 2px;
+
+  bottom: 2px;
+  left: 7px;
+  background-color: ${NoticeColor};
+
+  @media screen and (max-width: 630px) {
+    width: 26px;
+    height: 1px;
+
+    bottom: 1px;
+    left: 16px;
+  }
+`;
+
+export const LectureRow = styled.li`
   position: relative;
   display: flex;
   width: 100%;
@@ -247,33 +325,43 @@ export const LectureRow = styled.div`
   }
 `;
 
-export const LectureList = styled.div`
+export const LectureList = styled.ul`
   ${LectureRow}:last-child {
     border-bottom: none;
   }
 `;
 
 export const Ranking = styled.span`
-  width: 21px;
-  height: 27px;
-  margin: 5px 24px 0px 0px;
+  margin: 0px 24px 0px 0px;
+
+  color: ${PrimaryColor};
   font-size: 18px;
   font-weight: 500;
-  color: ${PrimaryColor};
+  line-height: normal;
+  letter-spacing: normal;
+
+  :before {
+    content: "0${({ index }) => index}";
+  }
 
   @media screen and (max-width: 630px) {
     display: flex;
+    width: auto;
     height: auto;
     margin: 0px 16px 0px 0px;
     color: ${FontColor};
     align-items: center;
+
+    :before {
+      content: "${({ index }) => index}";
+    }
   }
 `;
 
 export const TitleProfessorWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 
   margin-right: 24px;
   width: 199px;
@@ -287,48 +375,49 @@ export const TitleProfessorWrapper = styled.div`
 export const LectureTitle = styled.span`
   font-size: 14px;
   font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+
   color: ${FontColor};
 `;
 
 export const Professor = styled.span`
-  font-size: 12px;
   color: ${FontColor};
+
+  font-size: 12px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
 
   @media screen and (max-width: 630px) {
     color: #999;
-    font-weight: normal;
   }
 `;
 
-export const Classification = styled.span`
-  width: 50px;
-  margin: 8px 24px 0px 0px;
-  font-size: 12px;
-  text-align: center;
-`;
-
-export const Rating = styled(Classification)`
+export const Rating = styled.span`
   position: absolute;
   right: 24px;
-  width: 24px;
+  top: 16px;
+
   font-size: 16px;
   font-weight: 500;
-  margin: 5px 0px 0px 0px;
+  line-height: normal;
+  letter-spacing: normal;
 
   @media screen and (max-width: 630px) {
-    display: flex;
-    height: auto;
-    top: 24px;
+    top: 18px;
+    right: 16px;
+
     font-size: 18px;
   }
 `;
 
-// DashboardSection
-
-export const DashboardSection = styled.div`
+// DashboardSections
+export const DashboardSection = styled.section`
   display: flex;
   flex-wrap: wrap;
 `;
+
 export const DashboardLeftSection = styled.section`
   width: 464px;
   height: fit-content;
@@ -337,10 +426,10 @@ export const DashboardLeftSection = styled.section`
     width: 100%;
 
     position: relative;
-    top: -144px;
+    top: -153px;
   }
 `;
-export const DashBoardRightSection = styled.section`
+export const DashBoardRight = styled.div`
   width: 655px;
   margin-left: 16px;
 
@@ -350,29 +439,46 @@ export const DashBoardRightSection = styled.section`
   }
 `;
 
-export const DashboardRightTop = styled.section`
+export const DashboardRightTopSection = styled.section`
   width: 655px;
   margin-bottom: 32px;
   @media screen and (max-width: 630px) {
-    margin-top: 24px;
+    position: relative;
+    width: 100%;
+    bottom: -218px;
+    margin-top: 0;
   }
 `;
 
-export const RestBottomSection = styled.section`
+export const DashboardRightBottom = styled.div`
   display: flex;
   width: 655px;
+
+  @media screen and (max-width: 630px) {
+    flex-wrap: wrap;
+    width: 100%;
+  }
 `;
 
-export const RestBottomLeftSection = styled.section`
+export const RightBottomLeftSection = styled.section`
   width: 368px;
   margin-right: 16px;
+
+  @media screen and (max-width: 630px) {
+    position: relative;
+    width: 100%;
+    top: -184px;
+    margin-right: 0;
+  }
 `;
 
-export const RestBottomRightSection = styled.section`
+export const RightBottomRightSection = styled.section`
   width: 272px;
-`;
 
-// recommand
+  @media screen and (max-width: 630px) {
+    width: 100%;
+  }
+`;
 
 export const LeftSide = styled.div`
   width: 465px;
@@ -392,23 +498,49 @@ export const LeftBottomSide = styled.div`
 
 export const RightSide = styled.div``;
 
+// recommand Section
 export const NoResource = styled.span`
   font-size: 12px;
   color: ${PlaceholderColor};
-`;
-
-export const RecommendedResource = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 183px;
-  border: 1px solid
-    ${({ isData }) => (isData ? "transparent" : `${BorderColor}`)};
-  border-radius: 8px;
-  margin-top: 16px;
+  line-height: normal;
+  letter-spacing: normal;
 
   @media screen and (max-width: 630px) {
-    margin-top: 8px;
+    padding: 51px 0;
   }
+`;
+
+export const RecommendedResourceBox = styled(DashboardRightContentBox)`
+  border: 1px solid
+    ${({ isData }) => (isData ? "transparent" : `${BorderColor}`)};
+
+  @media screen and (max-width: 630px) {
+    min-height: auto;
+  }
+`;
+
+export const NoReourceSection = styled.div`
+  padding: 55px 0 53px 0;
+`;
+export const NoResourceButtonSection = styled.div`
+  margin: 6px 0;
+`;
+
+export const NoResourceButton = styled.button`
+  width: 109px;
+  height: 28px;
+
+  margin: 0px 23px 0;
+  padding: 5px 20px;
+
+  border: none;
+  border-radius: 20px;
+  background-color: #eee;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+
+  text-align: center;
+  color: ${PlaceholderColor};
 `;

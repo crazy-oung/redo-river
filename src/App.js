@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { GlobalStyle, Main } from "./GlobalStyle";
 
 import Navigation from "./components/Shared/Navigation";
-import IndexPage from "./pages/IndexPage";
+import IndexPage from "./pages/IndexPage/IndexPage";
 import Footer from "./components/Shared/Footer";
 
 const App = () => {

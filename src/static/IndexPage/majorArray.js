@@ -2,7 +2,7 @@ const MajorArray = [
   { src: "culture", label: "교양", value: "교양학부" },
   { src: "hrd", label: "HRD", value: "HRD학과" },
   { src: "machine", label: "기계", value: "기계공학부" },
-  { src: "design", label: "디·건", value: "디자인 건축 공학부" },
+  { src: "design", label: "디자인·건축", value: "디자인 건축 공학부" },
   { src: "mecha", label: "메카", value: "메카트로닉스 공학부" },
   { src: "industrial", label: "산경", value: "산업경영학부" },
   {
