@@ -3,7 +3,7 @@ import HangangLogoSvg from "../../assets/svg/logo/hangang-logo.svg";
 import HangangFooterLogoSvg from "../../assets/svg/logo/footer-hangang-logo.svg";
 
 import facebookIconSvg from "../../assets/svg/icon/footer-facebook-icon.svg";
-import homeIconSvg from "../../assets/svg/icon/footer-home-icon.svg";
+import footerHomeIconSvg from "../../assets/svg/icon/footer-home-icon.svg";
 
 import HomeIconSvg from "../../assets/svg/icon/home.svg";
 import LectureReviewIconSvg from "../../assets/svg/icon/clipboard-check.svg";
@@ -16,6 +16,7 @@ export const HANGANG_LOGO = HangangLogoSvg;
 export const HANGANG_FOOTER_LOGO = HangangFooterLogoSvg;
 
 export const FACEBOOK_ICON = facebookIconSvg;
+export const FOOTER_HOME_ICON = footerHomeIconSvg;
 export const HOME_ICON = HomeIconSvg;
 export const LECTURE_REVIEW_ICON = LectureReviewIconSvg;
 export const LECTURE_RESOURCE_ICON = LectureResourceIconSvg;
