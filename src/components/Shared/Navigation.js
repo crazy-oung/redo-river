@@ -28,10 +28,10 @@ const Navigation = () => {
   const history = useHistory();
 
   useEffect(() => {
-    return history.listen((localPath) => {
+    history.listen((localPath) => {
       setCurrentLocation(localPath.pathname);
     });
-  }, []);
+  }, [history]);
 
   return (
     <NavigationWrapper>
