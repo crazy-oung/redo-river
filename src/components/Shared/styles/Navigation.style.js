@@ -17,6 +17,25 @@ import {
   USER_ICON,
 } from "../../../static/Shared/commonUrls";
 
+const getCurrentLocationIndex = (location) => {
+  let path = location.split("/");
+
+  switch ("/" + path[1]) {
+    case "/lectures":
+      return 1;
+    case "/resources":
+      return 2;
+    case "/timetable":
+      return 3;
+    case "/my":
+      return 4;
+    case "/":
+      return 0;
+    default:
+      return -1;
+  }
+};
+
 export const NavigationWrapper = styled.nav`
   display: flex;
   width: 100%;
@@ -97,14 +116,18 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 17px;
   cursor: pointer;
 
+  &.selected {
+    color: ${PrimaryColor};
+    transition: transform 0.4s ease;
+    div {
+      background-color: ${PrimaryColor};
+    }
+  }
+
   @media screen and (max-width: ${MobileViewWidth}) {
     width: calc(100% / 5);
     color: ${PlaceholderColor};
     font-size: 11px;
-  }
-
-  &.selected {
-    color: ${PrimaryColor};
   }
 `;
 
@@ -116,10 +139,20 @@ export const MenuFocusedOn = styled.div`
   bottom: -1px;
   background-color: ${PrimaryColor};
 
+  transition: transform 0.4s ease;
+  transform: translateX(
+    ${({ location }) => getCurrentLocationIndex(location) * 107}px
+  );
+
   @media screen and (max-width: ${MobileViewWidth}) {
     width: calc(100% / 5);
     left: 0;
     bottom: 70px;
+
+    transform: translateX(
+      ${({ location }) =>
+        "calc( " + getCurrentLocationIndex(location) + " * (100vw / 5))"}
+    );
   }
 `;
 
