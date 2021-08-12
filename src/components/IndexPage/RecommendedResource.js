@@ -10,9 +10,19 @@ import {
   ResoruceContent,
   ResourceShortcut,
   ResourceCard,
+  LectureAndProfessor,
 } from "./styles/RecommendedResource.style";
+import { useGetRecommendedLectureResourcesQuery } from "../../api/indexApi";
 
-const RecommendedResource = ({ resourceList = [] }) => {
+const RecommendedResource = ({ ...rest }) => {
+  const {
+    data: resourceList,
+    isLoading,
+    isError,
+  } = useGetRecommendedLectureResourcesQuery();
+
+  if (isError) return <div>An error has occurred!</div>;
+  if (isLoading) return <></>;
   return (
     <>
       <SectionTitle>추천 강의자료</SectionTitle>
@@ -28,10 +38,13 @@ const RecommendedResource = ({ resourceList = [] }) => {
                       title={title}
                       index={index}
                       onClick={() => {
-                        alert(index + ", " + content);
+                        alert(index + ". " + content);
                       }}
                       to="/#"
-                    ></ResourceCard>
+                    />
+                    <LectureAndProfessor>
+                      {lecture.name}/{lecture.professor}
+                    </LectureAndProfessor>
                   </ResourceShortcut>
                 )
               )}

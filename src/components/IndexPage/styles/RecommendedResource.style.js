@@ -241,6 +241,21 @@ export const ResourceCard = styled(Link)`
   }
 `;
 
+export const LectureAndProfessor = styled.span`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  font-size: 10px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    display: none;
+  }
+`;
+
 const sliceTitle4PC = (title) => {
   if (title.length > 12) {
     title = title.slice(0, 12) + "...";
