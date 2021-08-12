@@ -9,6 +9,37 @@ import {
   PlaceholderColor,
 } from "../../../static/Shared/commonStyles";
 
+export const Department = styled.li`
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4px;
+  top: 12px;
+  height: 100%;
+
+  border-bottom: 2px solid
+    ${({ isPicked }) => (isPicked ? NoticeColor : "none")};
+
+  span {
+    position: relative;
+    color: ${({ isPicked }) => (isPicked ? PrimaryColor : PlaceholderColor)};
+    top: ${({ isPicked }) => (isPicked ? "1px" : "0")};
+  }
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    width: fit-content;
+    padding: 0 2px;
+    margin: 0 10px;
+    border-bottom: 1.5px solid
+      ${({ isPicked }) => (isPicked ? NoticeColor : "none")};
+
+    box-sizing: border-box;
+
+    white-space: nowrap;
+  }
+`;
+
 export const LectureRankingDeptMenu = styled.ul`
   display: flex;
   justify-content: space-between;
@@ -19,6 +50,7 @@ export const LectureRankingDeptMenu = styled.ul`
 
   @media screen and (max-width: ${MobileViewWidth}) {
     height: 44px;
+    padding: 0px 4px;
     overflow-x: scroll;
 
     -ms-overflow-style: none; /* IE and Edge */
@@ -27,27 +59,6 @@ export const LectureRankingDeptMenu = styled.ul`
     ::-webkit-scrollbar {
       display: none; /* Chrome, Safari, Opera*/
     }
-  }
-`;
-
-export const Department = styled.li`
-  box-sizing: content-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 4px;
-  top: 12px;
-  height: 100%;
-
-  span {
-    color: ${({ isPicked }) => (isPicked ? PrimaryColor : PlaceholderColor)};
-  }
-
-  @media screen and (max-width: ${MobileViewWidth}) {
-    width: fit-content;
-    padding-right: 12px;
-
-    white-space: nowrap;
   }
 `;
 
@@ -96,6 +107,11 @@ export const MenuFocusedOn = styled.div`
 
     bottom: 1px;
     left: 16px;
+
+    transition: transform 0.4s ease;
+    transform: translateX(
+      ${({ location }) => location * (42 + location * 1)}px
+    );
   }
 `;
 
@@ -114,8 +130,14 @@ export const LectureRow = styled.li`
   }
 `;
 export const LectureRankingList = styled.ul`
+  min-height: 355px;
+
   ${LectureRow}:last-child {
     border-bottom: none;
+  }
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    min-height: 315px;
   }
 `;
 
