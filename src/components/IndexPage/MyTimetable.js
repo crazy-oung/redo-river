@@ -16,23 +16,26 @@ import {
   TimeTableLectureRow,
   LectureReviewButton,
 } from "./styles/MyTimetable.style";
+import { timetableLectureList } from "../../static/IndexPage/sampleData";
 
-const MyTimetable = ({ lectureList = [] }) => {
+const MyTimetable = () => {
   return (
     <>
       <SectionTitle>내 시간표</SectionTitle>
-      <DashboardRightContentBox isEmpty={lectureList.length === 0}>
-        {lectureList.length !== 0 ? (
+      <DashboardRightContentBox isEmpty={timetableLectureList.length === 0}>
+        {timetableLectureList.length !== 0 ? (
           <TimetableLectureList>
-            {lectureList.map(({ id, name, professor, is_reviewed }, index) => (
-              <TimeTableLectureRow key={index}>
-                <TitleProfessorWrapper>
-                  <LectureTitle>{name}</LectureTitle>
-                  <ProfessorGrey>{professor}</ProfessorGrey>
-                  <LectureReviewButton isReviewed={is_reviewed} />
-                </TitleProfessorWrapper>
-              </TimeTableLectureRow>
-            ))}
+            {timetableLectureList.map(
+              ({ id, name, professor, is_reviewed }, index) => (
+                <TimeTableLectureRow key={index}>
+                  <TitleProfessorWrapper>
+                    <LectureTitle>{name}</LectureTitle>
+                    <ProfessorGrey>{professor}</ProfessorGrey>
+                    <LectureReviewButton isReviewed={is_reviewed} />
+                  </TitleProfessorWrapper>
+                </TimeTableLectureRow>
+              )
+            )}
           </TimetableLectureList>
         ) : (
           <NoReourceSection>
