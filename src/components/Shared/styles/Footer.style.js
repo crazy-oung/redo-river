@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { DefaultContentWidth } from "../../../static/Shared/commonStyles";
+import {
+  DefaultContentWidth,
+  MobileViewWidth,
+} from "../../../static/Shared/commonStyles";
 import {
   HANGANG_FOOTER_LOGO,
   FACEBOOK_ICON,
@@ -15,7 +18,7 @@ export const FooterWrapper = styled.footer`
   height: 203px;
   background-color: #3e3e3e;
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: ${MobileViewWidth}) {
     display: none;
   }
 `;
@@ -36,10 +39,16 @@ export const LeftSection = styled.div`
 
 export const CenterSection = styled.div`
   display: flex;
-  width: 752px;
-  padding: 0 53px;
+  width: 646px;
+
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: ${DefaultContentWidth}) {
+    width: 100%;
+    max-width: 646px;
+    padding: 0 15px;
+  }
 `;
 
 export const RightSection = styled.div`

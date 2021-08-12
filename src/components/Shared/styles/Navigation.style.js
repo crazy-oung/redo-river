@@ -6,6 +6,7 @@ import {
   PrimaryColor,
   PlaceholderColor,
   DefaultContentWidth,
+  MobileViewWidth,
 } from "../../../static/Shared/commonStyles";
 import {
   HANGANG_LOGO,
@@ -15,6 +16,25 @@ import {
   TIMETABLE_ICON,
   USER_ICON,
 } from "../../../static/Shared/commonUrls";
+
+const getCurrentLocationIndex = (location) => {
+  let path = location.split("/");
+
+  switch ("/" + path[1]) {
+    case "/lectures":
+      return 1;
+    case "/resources":
+      return 2;
+    case "/timetable":
+      return 3;
+    case "/my":
+      return 4;
+    case "/":
+      return 0;
+    default:
+      return -1;
+  }
+};
 
 export const NavigationWrapper = styled.nav`
   display: flex;
@@ -26,7 +46,7 @@ export const NavigationWrapper = styled.nav`
   border-bottom: 1px solid ${BorderColor};
   justify-content: center;
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: ${MobileViewWidth}) {
     border-bottom: none;
     padding: 0 20px;
   }
@@ -51,7 +71,7 @@ export const NavigationSectionMobile = styled.div`
 
   align-items: center;
   z-index: 10;
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: ${MobileViewWidth}) {
     display: flex;
     width: 100%;
     padding: 16px 0;
@@ -68,7 +88,7 @@ export const Logo = styled.img.attrs({
   margin-right: 40px;
   cursor: pointer;
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: ${MobileViewWidth}) {
     position: relative;
     height: 28px;
     left: -8px;
@@ -78,7 +98,7 @@ export const Logo = styled.img.attrs({
 export const LinkSection = styled.div`
   display: flex;
 
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: ${MobileViewWidth}) {
     display: none;
   }
 `;
@@ -96,14 +116,18 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 17px;
   cursor: pointer;
 
-  @media screen and (max-width: 630px) {
+  &.selected {
+    color: ${PrimaryColor};
+    transition: transform 0.4s ease;
+    div {
+      background-color: ${PrimaryColor};
+    }
+  }
+
+  @media screen and (max-width: ${MobileViewWidth}) {
     width: calc(100% / 5);
     color: ${PlaceholderColor};
     font-size: 11px;
-  }
-
-  &.selected {
-    color: ${PrimaryColor};
   }
 `;
 
@@ -115,10 +139,20 @@ export const MenuFocusedOn = styled.div`
   bottom: -1px;
   background-color: ${PrimaryColor};
 
-  @media screen and (max-width: 630px) {
+  transition: transform 0.4s ease;
+  transform: translateX(
+    ${({ location }) => getCurrentLocationIndex(location) * 107}px
+  );
+
+  @media screen and (max-width: ${MobileViewWidth}) {
     width: calc(100% / 5);
     left: 0;
     bottom: 70px;
+
+    transform: translateX(
+      ${({ location }) =>
+        "calc( " + getCurrentLocationIndex(location) + " * (100vw / 5))"}
+    );
   }
 `;
 

@@ -1,7 +1,9 @@
 import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import { DefaultContentWidth } from "./static/Shared/commonStyles";
-
+import {
+  DefaultContentWidth,
+  MobileViewWidth,
+} from "./static/Shared/commonStyles";
 export const GlobalStyle = createGlobalStyle`
   ${reset}
   @font-face {
@@ -9,6 +11,12 @@ export const GlobalStyle = createGlobalStyle`
       font-weight: normal; 
       font-style: normal;
       src: url(assets/font/NotoSansCJKKR/NotoSansCJKkr-Regular.otf) format('opentype');
+  }
+  @font-face {
+      font-family: 'NotoSansCJKKR';
+      font-weight: 500; 
+      font-style: normal;
+      src: url(assets/font/NotoSansCJKKR/NotoSansCJKkr-Medium.otf) format('opentype');
   }
   @font-face {
       font-family: 'NanumSquareRound';
@@ -41,7 +49,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   html, body, #root{
-    font-family: 'NotoSansCJKKR', 'Noto Sans', sans-serif;
+    font-family: 'NotoSansCJKKR', 'Noto Sans KR', 'Noto Sans', sans-serif;
     height: 100%;
     width: 100%;
   }
@@ -49,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Main = styled.main`
   min-height: 900px;
-  height: fit-content;
+
   min-width: ${DefaultContentWidth};
   padding: 0 20px;
 
@@ -59,8 +67,12 @@ export const Main = styled.main`
   -webkit-user-select: none;
   user-select: none;
 
-  @media screen and (max-width: 630px) {
-    min-width: auto;
-    min-height: auto;
+  @media screen and (min-width: 768px) {
+    min-width: 320px;
+  }
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    min-width: 320px;
+    height: inherit;
   }
 `;
