@@ -46,7 +46,7 @@ export const LectureReviewButton = styled.button`
 
   float: right;
   background-color: ${({ isReviewed }) =>
-    isReviewed ? `${PrimaryColor}` : "#eee"};
+    isReviewed ? "#eee" : `${PrimaryColor}`};
 
   border-radius: 20px;
   font-size: 12px;
@@ -54,10 +54,10 @@ export const LectureReviewButton = styled.button`
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
-  color: ${({ isReviewed }) => (isReviewed ? "#fff" : "#999")};
+  color: ${({ isReviewed }) => (isReviewed ? "#999" : "#fff")};
 
   :before {
-    content: " ${({ isReviewed }) => (isReviewed ? "평가완료" : "평가하기")}";
+    content: "${({ isReviewed }) => (isReviewed ? "평가완료" : "평가하기")}";
   }
   @media screen and (max-width: ${MobileViewWidth}) {
   }
