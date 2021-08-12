@@ -4,6 +4,10 @@ import {
   BorderColor,
   MobileViewWidth,
 } from "../../../static/Shared/commonStyles";
+import {
+  DashboardRightContentBox,
+  NoReourceSection,
+} from "../../../pages/IndexPage/styles/IndexPage.style";
 
 export const LectureRow = styled.li`
   display: flex;
@@ -33,4 +37,20 @@ export const LectureList = styled.ul`
   @media screen and (max-width: ${MobileViewWidth}) {
     padding: 1px 0;
   }
+`;
+
+export const ViewedReourceSection = styled(DashboardRightContentBox)`
+  @media screen and (max-width: ${MobileViewWidth}) {
+    min-height: 120px;
+  }
+  ​
+`;
+
+export const ViewedNoReourceSection = styled(NoReourceSection)`
+  padding: 117px 0;
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    padding: 49px 0;
+  }
+  ​
 `;
