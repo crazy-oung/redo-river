@@ -140,7 +140,7 @@ export const TitleProfessorWrapper = styled.div`
   justify-content: space-around;
 
   margin-right: 24px;
-  width: 199px;
+  width: auto;
 
   @media screen and (max-width: ${MobileViewWidth}) {
     height: auto;
@@ -250,8 +250,10 @@ export const DashboardRightTopSection = styled.section`
   @media screen and (max-width: ${MobileViewWidth}) {
     position: relative;
     width: 100%;
-    bottom: ${({ lectureListSize }) =>
-      lectureListSize > 2 ? -240 - (lectureListSize - 3) * 62 : -210}px;
+    bottom: ${({ timetableLectureListSize }) =>
+      timetableLectureListSize > 2
+        ? -240 - (timetableLectureListSize - 3) * 62
+        : -210}px;
     margin-top: 0;
     margin-bottom: 32px;
   }
