@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { DefaultContentWidth } from "../../../static/Shared/commonStyles";
+import {
+  DefaultContentWidth,
+  MobileViewWidth,
+} from "../../../static/Shared/commonStyles";
 import {
   HANGANG_FOOTER_LOGO,
   FACEBOOK_ICON,
@@ -15,7 +18,7 @@ export const FooterWrapper = styled.footer`
   height: 203px;
   background-color: #3e3e3e;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${MobileViewWidth}) {
     display: none;
   }
 `;
