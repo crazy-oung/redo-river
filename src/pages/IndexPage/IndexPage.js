@@ -6,153 +6,24 @@ import {
   TitleBold,
   TitleNormal,
   BannerImg,
-  MajorSearchContent,
-  MajorSearchContentList,
-  SectionTitle,
-  MajorShortcut,
-  MajorCard,
   MajorSearchSection,
-  DashBoardContentBox,
-  DashboardRightContentBox,
-  TitleProfessorWrapper,
-  LectureRankingDeptMenu,
-  MenuFocusedOn,
-  Department,
-  DepartmentName,
-  LectureList,
-  LectureRow,
-  Professor,
-  Ranking,
-  Rating,
-  LectureTitle,
   DashboardSection,
-  DashboardLeftSection,
+  DashboardLeft,
   DashBoardRight,
   DashboardRightTopSection,
   DashboardRightBottom,
   RightBottomLeftSection,
   RightBottomRightSection,
-  NoResource,
-  RecommendedResourceBox,
-  NoReourceSection,
-  NoResourceButtonSection,
-  NoResourceButton,
 } from "./styles/IndexPage.style";
 
-import MajorArray from "../../static/IndexPage/majorArray";
-/**
- * TODO:
- * - [ ] 컴포넌트 분리 ***
- *  - [ ] 컴포넌트 따라 스타일 코드 분리
- *
- * @returns
- */
-// *  인데스 파일안에 있는 Section들을 컴포넌트로 분리할 예정입니다.
-const IndexPage = () => {
-  //TODO: API연동 후 지울 것
-  const displayLectures = {
-    result: [
-      {
-        id: 1780,
-        is_scraped: false,
-        grade: 3,
-        semester_data: ["2021년 1학기"],
-        top3_hash_tag: [
-          { id: 5, tag: "배운거많음" },
-          { id: 6, tag: "좋은교수님" },
-        ],
-        code: "IFB323",
-        name: "임베디드SOC설계및실습",
-        department: "전기ㆍ전자ㆍ통신공학부",
-        professor: "장영조",
-        classification: "전선",
-        total_rating: 5.0,
-        last_reviewed_at: "2021-07-23T08:15:23.000+00:00",
-        review_count: 1,
-        is_deleted: false,
-        created_at: "2021-07-22T11:35:35.000+00:00",
-        updated_at: "2021-07-23T08:15:23.000+00:00",
-      },
-      {
-        id: 1222,
-        is_scraped: false,
-        grade: 3,
-        semester_data: ["2021년 1학기"],
-        top3_hash_tag: [
-          { id: 3, tag: "리얼수면제" },
-          { id: 9, tag: "조금아쉬움" },
-        ],
-        code: "IFB270",
-        name: "고급전자회로",
-        department: "전기ㆍ전자ㆍ통신공학부",
-        professor: "조현찬",
-        classification: "전선",
-        total_rating: 2.5,
-        last_reviewed_at: "2021-07-23T20:20:06.000+00:00",
-        review_count: 1,
-        is_deleted: false,
-        created_at: "2021-07-22T11:35:35.000+00:00",
-        updated_at: "2021-07-23T20:20:06.000+00:00",
-      },
-      {
-        id: 1159,
-        is_scraped: false,
-        grade: 3,
-        semester_data: ["2021년 1학기", "2021년 2학기"],
-        top3_hash_tag: [],
-        code: "IFA740",
-        name: "Research Experience ",
-        department: "전기ㆍ전자ㆍ통신공학부",
-        professor: "에이제이",
-        classification: "전선",
-        total_rating: 0.0,
-        last_reviewed_at: "2021-07-21T14:04:42.000+00:00",
-        review_count: 0,
-        is_deleted: false,
-        created_at: "2021-07-22T11:35:35.000+00:00",
-        updated_at: "2021-07-22T15:48:25.000+00:00",
-      },
-      {
-        id: 1162,
-        is_scraped: false,
-        grade: 3,
-        semester_data: ["2021년 1학기"],
-        top3_hash_tag: [],
-        code: "IFE450",
-        name: "RF회로설계",
-        department: "전기ㆍ전자ㆍ통신공학부",
-        professor: "오창헌",
-        classification: "학부선",
-        total_rating: 0.0,
-        last_reviewed_at: "2021-07-21T14:04:42.000+00:00",
-        review_count: 0,
-        is_deleted: false,
-        created_at: "2021-07-22T11:35:35.000+00:00",
-        updated_at: "2021-07-22T15:48:25.000+00:00",
-      },
-      {
-        id: 1169,
-        is_scraped: false,
-        grade: 3,
-        semester_data: ["2021년 1학기"],
-        top3_hash_tag: [],
-        code: "IFC294",
-        name: "객체지향프로그래밍",
-        department: "전기ㆍ전자ㆍ통신공학부",
-        professor: "설순욱",
-        classification: "전필",
-        total_rating: 0.0,
-        last_reviewed_at: "2021-07-21T14:04:42.000+00:00",
-        review_count: 0,
-        is_deleted: false,
-        created_at: "2021-07-22T11:35:35.000+00:00",
-        updated_at: "2021-07-22T15:48:25.000+00:00",
-      },
-    ],
-    count: 127,
-  };
+import MajorSearch from "../../components/IndexPage/MajorSearch";
+import LectureRanking from "../../components/IndexPage/LectureRanking";
+import RecommendedResource from "../../components/IndexPage/RecommendedResource";
+import MyTimetable from "../../components/IndexPage/MyTimetable";
+import LateViewedLecture from "../../components/IndexPage/LateViewedLecture";
 
-  const lectureList = [
+const IndexPage = () => {
+  let lectureList = [
     {
       id: 810,
       lecture_id: 2014,
@@ -367,11 +238,154 @@ const IndexPage = () => {
       updated_at: "2021-07-22T06:53:56.000+00:00",
       rating: 0.0,
       memo: null,
-      is_reviewed: false,
+      is_reviewed: true,
     },
   ];
 
-  const onFirstLoad = false;
+  let ResourceList = [
+    {
+      id: 242,
+      user_id: 242,
+      lecture_id: 1727,
+      category: ["기출자료"],
+      title: "[2019 운영체제 중간고사]",
+      content: "2019년 운영체제 중간고사 입니다.",
+      point_price: 100,
+      semester_date: "1",
+      hits: 0,
+      created_at: "2021-07-23T15:10:00.000+00:00",
+      updated_at: "2021-07-23T15:10:00.000+00:00",
+      is_deleted: false,
+      is_hit: false,
+      user_scrap_id: 0,
+      is_purchase: false,
+      thumbnail:
+        "https://static.hangang.in/2021/05/13/fa15f7f5-2c04-43ef-95ca-9c08e5e8a860-1620904785854.png",
+      user: { nickname: "오뚜기밥" },
+      lecture: {
+        is_scraped: false,
+        code: "CSE132",
+        name: "운영체제",
+        department: "컴퓨터공학부",
+        professor: "서희석",
+        classification: "학부필",
+      },
+    },
+    {
+      id: 241,
+      user_id: 242,
+      lecture_id: 560,
+      category: ["기출자료"],
+      title: "[2019 알고리즘및실습 기말고사 기출문제]",
+      content: "2019년 알고리즘 및실습 기말고사 시험문제입니다.",
+      point_price: 100,
+      semester_date: "1",
+      hits: 0,
+      created_at: "2021-07-23T15:07:33.000+00:00",
+      updated_at: "2021-07-23T15:07:33.000+00:00",
+      is_deleted: false,
+      is_hit: false,
+      user_scrap_id: 0,
+      is_purchase: false,
+      thumbnail:
+        "https://static.hangang.in/2021/05/13/fa15f7f5-2c04-43ef-95ca-9c08e5e8a860-1620904785854.png",
+      user: { nickname: "오뚜기밥" },
+      lecture: {
+        is_scraped: false,
+        code: "CSE130",
+        name: "알고리즘및실습",
+        department: "컴퓨터공학부",
+        professor: "민준기",
+        classification: "학부필",
+      },
+    },
+    {
+      id: 240,
+      user_id: 242,
+      lecture_id: 560,
+      category: ["기출자료"],
+      title: "[2019 알고리즘및실습 중간고사 기출자료]",
+      content: "2019년 민준기교수님 알고리즘및실습 중간고사 시험문제입니다.",
+      point_price: 100,
+      semester_date: "1",
+      hits: 0,
+      created_at: "2021-07-23T15:05:17.000+00:00",
+      updated_at: "2021-07-23T15:05:17.000+00:00",
+      is_deleted: false,
+      is_hit: false,
+      user_scrap_id: 0,
+      is_purchase: false,
+      thumbnail:
+        "https://static.hangang.in/2021/05/13/fa15f7f5-2c04-43ef-95ca-9c08e5e8a860-1620904785854.png",
+      user: { nickname: "오뚜기밥" },
+      lecture: {
+        is_scraped: false,
+        code: "CSE130",
+        name: "알고리즘및실습",
+        department: "컴퓨터공학부",
+        professor: "민준기",
+        classification: "학부필",
+      },
+    },
+    {
+      id: 239,
+      user_id: 242,
+      lecture_id: 1396,
+      category: ["기출자료"],
+      title: "[2019 데이터베이스설계 중간고사 기출]",
+      content:
+        "2019년 데이터베이스설계 중간고사 기출입니다.\n당시 기말고사는 텀프로젝트로 대체하여 중간고사만 봤습니다.",
+      point_price: 100,
+      semester_date: "1",
+      hits: 0,
+      created_at: "2021-07-23T15:02:40.000+00:00",
+      updated_at: "2021-07-23T15:02:40.000+00:00",
+      is_deleted: false,
+      is_hit: false,
+      user_scrap_id: 0,
+      is_purchase: false,
+      thumbnail:
+        "https://static.hangang.in/2021/05/13/fa15f7f5-2c04-43ef-95ca-9c08e5e8a860-1620904785854.png",
+      user: { nickname: "오뚜기밥" },
+      lecture: {
+        is_scraped: false,
+        code: "CSE231",
+        name: "데이터베이스설계",
+        department: "컴퓨터공학부",
+        professor: "김은경",
+        classification: "학부선",
+      },
+    },
+    {
+      id: 238,
+      user_id: 242,
+      lecture_id: 1789,
+      category: ["기출자료"],
+      title: "[2018 자료구조 기말고사 기출]",
+      content: "2018년 자료구조 기말고사 기출입니다.\n",
+      point_price: 100,
+      semester_date: "1",
+      hits: 0,
+      created_at: "2021-07-23T14:59:12.000+00:00",
+      updated_at: "2021-07-23T14:59:12.000+00:00",
+      is_deleted: false,
+      is_hit: false,
+      user_scrap_id: 0,
+      is_purchase: false,
+      thumbnail:
+        "https://static.hangang.in/2021/05/13/fa15f7f5-2c04-43ef-95ca-9c08e5e8a860-1620904785854.png",
+      user: { nickname: "오뚜기밥" },
+      lecture: {
+        is_scraped: false,
+        code: "CSE123",
+        name: "자료구조및실습",
+        department: "컴퓨터공학부",
+        professor: "최영규",
+        classification: "학부필",
+      },
+    },
+  ];
+
   return (
     <Wrapper>
       <BannerSection>
@@ -383,83 +397,26 @@ const IndexPage = () => {
       </BannerSection>
 
       <MajorSearchSection>
-        <SectionTitle>학부별 탐색</SectionTitle>
-        <MajorSearchContent>
-          <MajorSearchContentList>
-            {MajorArray.map(({ src, label, value }, index) => (
-              <MajorShortcut key={label}>
-                <MajorCard
-                  img={src}
-                  majorName={value}
-                  index={index}
-                  onClick={() => {
-                    alert(index + ", " + value);
-                  }}
-                  to="/"
-                ></MajorCard>
-              </MajorShortcut>
-            ))}
-          </MajorSearchContentList>
-        </MajorSearchContent>
+        <MajorSearch />
       </MajorSearchSection>
 
       <DashboardSection>
-        <DashboardLeftSection>
-          <SectionTitle>강의랭킹</SectionTitle>
-          <DashBoardContentBox>
-            <LectureRankingDeptMenu>
-              {MajorArray.map(({ label, value }) => (
-                <Department isPicked={!onFirstLoad} key={label}>
-                  <DepartmentName name={label} />
-                </Department>
-              ))}
-            </LectureRankingDeptMenu>
-            <MenuFocusedOn />
-            <LectureList>
-              {displayLectures.result.map(
-                ({ id, name, professor, total_rating }, index) => (
-                  <LectureRow key={index}>
-                    <Ranking index={++index} />
-                    <TitleProfessorWrapper>
-                      <LectureTitle>{name}</LectureTitle>
-                      <Professor>{professor}</Professor>
-                    </TitleProfessorWrapper>
-                    <Rating>{total_rating.toFixed(1)}</Rating>
-                  </LectureRow>
-                )
-              )}
-            </LectureList>
-          </DashBoardContentBox>
-        </DashboardLeftSection>
+        <DashboardLeft>
+          <LectureRanking />
+        </DashboardLeft>
 
         <DashBoardRight>
-          <DashboardRightTopSection>
-            <SectionTitle>추천 강의자료</SectionTitle>
-            <RecommendedResourceBox>
-              <NoResource>
-                시간표를 작성하지 않았거나 업로드된 강의자료가 없습니다.
-              </NoResource>
-            </RecommendedResourceBox>
+          <DashboardRightTopSection lectureListSize={lectureList.length}>
+            <RecommendedResource resourceList={ResourceList} />
           </DashboardRightTopSection>
 
           <DashboardRightBottom>
             <RightBottomLeftSection>
-              <SectionTitle>내 시간표</SectionTitle>
-              <DashboardRightContentBox>
-                <NoReourceSection>
-                  <NoResource>아직 작성한 시간표가 없습니다.</NoResource>
-                  <NoResourceButtonSection>
-                    <NoResourceButton>작성하러 가기</NoResourceButton>
-                  </NoResourceButtonSection>
-                </NoReourceSection>
-              </DashboardRightContentBox>
+              <MyTimetable lectureList={lectureList} />
             </RightBottomLeftSection>
 
             <RightBottomRightSection>
-              <SectionTitle>최근 본 강의</SectionTitle>
-              <DashboardRightContentBox>
-                <NoResource>최근에 본 강의가 없습니다.</NoResource>
-              </DashboardRightContentBox>
+              <LateViewedLecture lectureList={lectureList} />
             </RightBottomRightSection>
           </DashboardRightBottom>
         </DashBoardRight>
