@@ -53,10 +53,10 @@ export const ResourceShortcut = styled.li`
 
 export const ResourceContentList = styled.ul`
   display: flex;
-  flex-wrap: wrap;
-
   width: 100%;
   height: 183px;
+
+  flex-wrap: wrap;
 
   ${ResourceShortcut}:nth-child(1) {
     width: 271px;
@@ -155,6 +155,8 @@ export const ResourceContentList = styled.ul`
 
   @media screen and (max-width: ${MobileViewWidth}) {
     width: fit-content;
+    height: auto;
+
     flex-wrap: nowrap;
 
     ${ResourceShortcut}:nth-child(n) {
