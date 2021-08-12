@@ -1,0 +1,131 @@
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import {
+  MobileViewWidth,
+  MINIMUM_PC_WEBVIEW_WIDTH,
+} from "../../../static/Shared/commonStyles";
+
+export const MajorSearchSection = styled.section`
+  width: 100%;
+  margin-bottom: 32px;
+
+  @media screen and (max-width: ${MINIMUM_PC_WEBVIEW_WIDTH}) {
+    margin-bottom: 24px;
+  }
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    position: relative;
+    margin-bottom: 24px;
+    top: 404px;
+  }
+`;
+
+export const MajorSearchContent = styled.div`
+  width: 100%;
+  margin-top: 16px;
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    width: calc(100% + 20px);
+    margin-top: 0;
+    margin-bottom: 32px;
+
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    ::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
+  }
+`;
+
+export const MajorSearchContentList = styled.ul`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  @media screen and (max-width: ${MINIMUM_PC_WEBVIEW_WIDTH}) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    width: fit-content;
+    flex-wrap: nowrap;
+
+    margin-top: 8px;
+  }
+`;
+
+export const MajorShortcut = styled.li`
+  all: unset;
+  position: relative;
+
+  width: 100px;
+  height: 87px;
+  margin-right: 15px;
+
+  @media screen and (max-width: ${MINIMUM_PC_WEBVIEW_WIDTH}) {
+    min-width: 87px;
+
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+    margin-bottom: 15px;
+  }
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    width: 87px;
+    height: 87px;
+
+    margin-left: 0;
+    margin-right: 8px;
+    margin-bottom: 0;
+
+    background-size: 87px 87px;
+  }
+`;
+
+export const MajorCard = styled(Link)`
+  display: block;
+
+  width: 100px;
+  height: 100%;
+
+  background-image: url(${({ img }) => img});
+  background-position-y: -7px;
+  background-size: 100px 101px;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  :before {
+    all: unset;
+
+    position: absolute;
+    width: 68px;
+    left: calc(50% - 34px);
+    bottom: 9px;
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    text-align: center;
+    word-break: break-all;
+    white-space: initial;
+
+    cursor: pointer;
+    content: "${({ majorName }) => majorName}";
+  }
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    width: 87px;
+    margin-right: 8px;
+
+    background-size: 87px 87px;
+    background-position-y: 0;
+  }
+`;
