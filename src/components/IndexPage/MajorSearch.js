@@ -20,12 +20,12 @@ const LectureRanking = () => {
             <MajorShortcut key={label}>
               <MajorCard
                 img={src}
-                majorName={value}
+                name={value}
                 index={index}
                 onClick={() => {
                   alert(index + ", " + value);
                 }}
-                to="/#"
+                to="/lectures"
               ></MajorCard>
             </MajorShortcut>
           ))}

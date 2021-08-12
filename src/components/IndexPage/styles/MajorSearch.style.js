@@ -118,7 +118,7 @@ export const MajorCard = styled(Link)`
     white-space: initial;
 
     cursor: pointer;
-    content: "${({ majorName }) => majorName}";
+    content: "${({ name }) => name}";
   }
 
   @media screen and (max-width: ${MobileViewWidth}) {

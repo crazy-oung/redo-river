@@ -14,7 +14,7 @@ import {
 } from "./styles/RecommendedResource.style";
 import { useGetRecommendedLectureResourcesQuery } from "../../api/indexApi";
 
-const RecommendedResource = ({ ...rest }) => {
+const RecommendedResource = () => {
   const {
     data: resourceList,
     isLoading,
@@ -40,7 +40,7 @@ const RecommendedResource = ({ ...rest }) => {
                       onClick={() => {
                         alert(index + ". " + content);
                       }}
-                      to="/#"
+                      to="/resources/`${id}`"
                     />
                     <LectureAndProfessor>
                       {lecture.name}/{lecture.professor}
