@@ -33,22 +33,22 @@ const Footer = () => {
 
           <ExternalSection>
             <ExternalSectionButton>
-              <ExternalLink href="https://bcsdlab.com/">
+              <ExternalLink to="https://bcsdlab.com/">
                 BCSD Lab 바로가기
               </ExternalLink>
             </ExternalSectionButton>
             <ExternalSectionButton>
-              <ExternalLink href="https://www.koreatech.ac.kr/kor/Main.do">
+              <ExternalLink to="https://www.koreatech.ac.kr/kor/Main.do">
                 코리아텍 바로가기
               </ExternalLink>
             </ExternalSectionButton>
             <ExternalSectionButton>
-              <ExternalLink href="https://portal.koreatech.ac.kr/login.jsp">
+              <ExternalLink to="https://portal.koreatech.ac.kr/login.jsp">
                 아우누리 바로가기
               </ExternalLink>
             </ExternalSectionButton>
             <ExternalSectionButton>
-              <ExternalLink>개인정보 처리방침</ExternalLink>
+              <ExternalLink to="/#">개인정보 처리방침</ExternalLink>
             </ExternalSectionButton>
           </ExternalSection>
           <CopyRight>
@@ -56,10 +56,10 @@ const Footer = () => {
           </CopyRight>
         </CenterSection>
         <RightSection>
-          <ExternalLink href="https://www.facebook.com/BCSD-Lab-1727922507422214/">
+          <ExternalLink to="https://www.facebook.com/BCSD-Lab-1727922507422214/">
             <FacebookIcon />
           </ExternalLink>
-          <ExternalLink href="/">
+          <ExternalLink to="/">
             <HomeIcon />
           </ExternalLink>
         </RightSection>

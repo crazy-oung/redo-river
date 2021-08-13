@@ -40,7 +40,7 @@ const RecommendedResource = () => {
                       onClick={() => {
                         alert(index + ". " + content);
                       }}
-                      to="/resources/`${id}`"
+                      to={"/resources/" + id}
                     />
                     <LectureAndProfessor>
                       {lecture.name}/{lecture.professor}

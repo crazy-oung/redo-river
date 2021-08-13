@@ -24,11 +24,11 @@ const getCachedLecture = JSON.parse(
 const LateViewedLecture = () => {
   try {
     if (!getCachedLecture) {
-      alert("최근 본 강의 데이터가 존재하지 않습니다.");
+      console.log("최근 본 강의 데이터가 존재하지 않습니다.");
       const cachedLecture = JSON.stringify(timetableLectureList);
       localStorage.setItem("HangangLateViewedLecture", cachedLecture);
     } else {
-      alert("최근 본 강의 데이터가 존재해 캐시를 저장하지 않았습니다.");
+      console.log("최근 본 강의 데이터가 존재해 캐시를 저장하지 않았습니다.");
     }
   } catch (error) {
     console.log(error);
@@ -39,8 +39,6 @@ const LateViewedLecture = () => {
     localStorage.setItem("HangangLateViewedLecture", cachedLecture);
     throw new Error(error);
   }
-
-  console.log(getCachedLecture);
 
   return (
     <>
