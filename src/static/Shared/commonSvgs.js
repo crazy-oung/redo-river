@@ -1,4 +1,4 @@
-import HangangMainSvg from "../../assets/svg/mask-group.svg";
+import HangangMainSvg from "../../assets/svg/main-illust.svg";
 import HangangLogoSvg from "../../assets/svg/logo/hangang-logo.svg";
 import HangangFooterLogoSvg from "../../assets/svg/logo/footer-hangang-logo.svg";
 
