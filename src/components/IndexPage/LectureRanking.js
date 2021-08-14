@@ -17,15 +17,13 @@ import {
   Ranking,
 } from "./styles/LectureRanking.style";
 
-import MajorArray from "../../static/IndexPage/majorArray";
-import { MAJOR_LIST } from "../../static/Shared/MAJOR_LIST";
+import MAJOR_ARRAY from "../../static/IndexPage/majorArray";
 import { useGetLectureRankingByLectureQuery } from "../../api/indexApi";
 
 const LectureRanking = () => {
   const [majorIndex, setMajorIndex] = useState(0);
-
   const { data, isLoading } = useGetLectureRankingByLectureQuery(
-    MAJOR_LIST[majorIndex].department
+    MAJOR_ARRAY[majorIndex].id
   );
 
   return (
@@ -33,7 +31,7 @@ const LectureRanking = () => {
       <SectionTitle>강의랭킹</SectionTitle>
       <DashBoardContentBox>
         <LectureRankingDeptMenu>
-          {MajorArray.map(({ label }, index) => (
+          {MAJOR_ARRAY.map(({ label }, index) => (
             <Department
               onClick={() => {
                 setMajorIndex(index);

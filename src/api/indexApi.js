@@ -11,8 +11,8 @@ export const indexApi = createApi({
       query: () => `lecture-banks/hit`,
     }),
     getLectureRankingByLecture: build.query({
-      query: (department) =>
-        `lectures?department=${department}&limit=5&page=1&sort=평점순`,
+      query: (departmentId) =>
+        `lectures?departmentId=${departmentId}&limit=5&page=1&sort=평점순`,
     }),
   }),
 });
