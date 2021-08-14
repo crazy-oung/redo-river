@@ -18,7 +18,7 @@ import {
   LectureResourceIcon,
   TimetableIcon,
   MypageIcon,
-} from "./styles/Navigation.style";
+} from "./Navigation.style";
 
 const Navigation = () => {
   const [currentLocation, setCurrentLocation] = useState(

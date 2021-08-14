@@ -8,14 +8,14 @@ import {
   LectureTitle,
   ProfessorGrey,
   Rating,
-} from "../../pages/IndexPage/styles/IndexPage.style";
+} from "../../../pages/IndexPage/styles/IndexPage.style";
 import {
   LectureList,
   LectureRow,
   ViewedNoReourceSection,
-} from "./styles/LateViewedLecture.style";
+} from "./LateViewedLecture.style";
 
-import { timetableLectureList } from "../../static/IndexPage/sampleData";
+import { timetableLectureList } from "../../../static/IndexPage/sampleData";
 
 const getCachedLecture = JSON.parse(
   localStorage.getItem("Hangang.LateViewedLecture")

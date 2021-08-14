@@ -1,14 +1,14 @@
 import React from "react";
 
-import { SectionTitle } from "../../pages/IndexPage/styles/IndexPage.style";
+import { SectionTitle } from "../../../pages/IndexPage/styles/IndexPage.style";
 import {
   MajorSearchContent,
   MajorSearchContentList,
   MajorShortcut,
   MajorCard,
-} from "./styles/MajorSearch.style";
+} from "./MajorSearch.style";
 
-import MajorArray from "../../static/IndexPage/majorArray";
+import MajorArray from "../../../static/IndexPage/majorArray";
 
 const LectureRanking = () => {
   return (

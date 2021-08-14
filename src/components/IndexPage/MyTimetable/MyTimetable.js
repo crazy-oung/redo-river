@@ -10,13 +10,13 @@ import {
   NoResourceButtonSection,
   NoResourceButton,
   NoResource,
-} from "../../pages/IndexPage/styles/IndexPage.style";
+} from "../../../pages/IndexPage/styles/IndexPage.style";
 import {
   TimetableLectureList,
   TimeTableLectureRow,
   LectureReviewButton,
-} from "./styles/MyTimetable.style";
-import { timetableLectureList } from "../../static/IndexPage/sampleData";
+} from "./MyTimetable.style";
+import { timetableLectureList } from "../../../static/IndexPage/sampleData";
 
 const MyTimetable = () => {
   return (

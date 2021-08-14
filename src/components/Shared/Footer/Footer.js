@@ -15,7 +15,7 @@ import {
   FacebookIcon,
   HomeIcon,
   CopyRight,
-} from "./styles/Footer.style";
+} from "./Footer.style";
 
 const Footer = () => {
   return (

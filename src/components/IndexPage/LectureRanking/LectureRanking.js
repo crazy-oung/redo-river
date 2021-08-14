@@ -7,7 +7,7 @@ import {
   LectureTitle,
   Professor,
   Rating,
-} from "../../pages/IndexPage/styles/IndexPage.style";
+} from "../../../pages/IndexPage/styles/IndexPage.style";
 import {
   LectureRankingDeptMenu,
   Department,
@@ -15,10 +15,10 @@ import {
   LectureRankingList,
   LectureRow,
   Ranking,
-} from "./styles/LectureRanking.style";
+} from "./LectureRanking.style";
 
-import MAJOR_ARRAY from "../../static/IndexPage/majorArray";
-import { useGetLectureRankingByLectureQuery } from "../../api/indexApi";
+import MAJOR_ARRAY from "../../../static/IndexPage/majorArray";
+import { useGetLectureRankingByLectureQuery } from "../../../api/indexApi";
 
 const LectureRanking = () => {
   const [majorIndex, setMajorIndex] = useState(0);

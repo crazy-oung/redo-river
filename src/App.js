@@ -1,10 +1,37 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import { GlobalStyle, Main } from "./GlobalStyle";
+import styled from "styled-components";
+import { GlobalStyle } from "./GlobalStyle";
+import {
+  DefaultContentWidth,
+  MobileViewWidth,
+} from "./static/Shared/commonStyles";
 
-import Navigation from "./components/Shared/Navigation";
+import Navigation from "./components/Shared/Navigation/Navigation";
+import Footer from "./components/Shared/Footer/Footer";
 import IndexPage from "./pages/IndexPage/IndexPage";
-import Footer from "./components/Shared/Footer";
+
+export const Main = styled.main`
+  min-height: 900px;
+
+  min-width: ${DefaultContentWidth};
+  padding: 0 20px;
+
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  @media screen and (min-width: 768px) {
+    min-width: 320px;
+  }
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    min-width: 320px;
+    height: inherit;
+  }
+`;
 
 const App = () => {
   return (

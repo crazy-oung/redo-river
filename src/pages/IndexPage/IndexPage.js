@@ -17,11 +17,11 @@ import {
   RightBottomRightSection,
 } from "./styles/IndexPage.style";
 
-import MajorSearch from "../../components/IndexPage/MajorSearch";
-import LectureRanking from "../../components/IndexPage/LectureRanking";
-import RecommendedResource from "../../components/IndexPage/RecommendedResource";
-import MyTimetable from "../../components/IndexPage/MyTimetable";
-import LateViewedLecture from "../../components/IndexPage/LateViewedLecture";
+import MajorSearch from "../../components/IndexPage/MajorSearch/MajorSearch";
+import LectureRanking from "../../components/IndexPage/LectureRanking/LectureRanking";
+import RecommendedResource from "../../components/IndexPage/RecommendedResource/RecommendedResource";
+import MyTimetable from "../../components/IndexPage/MyTimetable/MyTimetable";
+import LateViewedLecture from "../../components/IndexPage/LateViewedLecture/LateViewedLecture";
 
 import { timetableLectureList } from "../../static/IndexPage/sampleData";
 

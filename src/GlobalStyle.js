@@ -54,25 +54,3 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 `;
-
-export const Main = styled.main`
-  min-height: 900px;
-
-  min-width: ${DefaultContentWidth};
-  padding: 0 20px;
-
-  -ms-user-select: none;
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-
-  @media screen and (min-width: 768px) {
-    min-width: 320px;
-  }
-
-  @media screen and (max-width: ${MobileViewWidth}) {
-    min-width: 320px;
-    height: inherit;
-  }
-`;

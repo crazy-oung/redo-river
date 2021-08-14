@@ -3,7 +3,7 @@ import React from "react";
 import {
   SectionTitle,
   NoResource,
-} from "../../pages/IndexPage/styles/IndexPage.style";
+} from "../../../pages/IndexPage/styles/IndexPage.style";
 import {
   RecommendedResourceBox,
   ResourceContentList,
@@ -11,8 +11,8 @@ import {
   ResourceShortcut,
   ResourceCard,
   LectureAndProfessor,
-} from "./styles/RecommendedResource.style";
-import { useGetRecommendedLectureResourcesQuery } from "../../api/indexApi";
+} from "./RecommendedResource.style";
+import { useGetRecommendedLectureResourcesQuery } from "../../../api/indexApi";
 
 const RecommendedResource = () => {
   const {
@@ -30,7 +30,7 @@ const RecommendedResource = () => {
         {resourceList.length !== 0 ? (
           <ResoruceContent>
             <ResourceContentList>
-              {resourceList.map(
+              {resourceList.result.map(
                 ({ id, title, lecture, thumbnail, content }, index) => (
                   <ResourceShortcut key={id}>
                     <ResourceCard
