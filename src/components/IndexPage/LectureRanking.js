@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import {
   SectionTitle,
@@ -27,10 +27,6 @@ const LectureRanking = () => {
   const { data, isLoading } = useGetLectureRankingByLectureQuery(
     MAJOR_LIST[majorIndex].department
   );
-
-  useEffect(() => {
-    console.log("used");
-  }, [majorIndex]);
 
   return (
     <>

@@ -90,33 +90,6 @@ export const DepartmentName = styled.span`
   }
 `;
 
-export const MenuFocusedOn = styled.div`
-  display: block;
-  position: relative;
-  width: ${({ menuWidth }) => menuWidth};
-  height: 2px;
-
-  bottom: 2px;
-  left: 7px;
-  background-color: ${NoticeColor};
-
-  transition: transform 0.4s ease;
-  transform: translateX(${({ location }) => location * (42 + location * 1)}px);
-
-  @media screen and (max-width: ${MobileViewWidth}) {
-    width: 26px;
-    height: 1px;
-
-    bottom: 1px;
-    left: 16px;
-
-    transition: transform 0.4s ease;
-    transform: translateX(
-      ${({ location }) => location * (42 + location * 1)}px
-    );
-  }
-`;
-
 export const LectureRow = styled.li`
   position: relative;
   display: flex;
