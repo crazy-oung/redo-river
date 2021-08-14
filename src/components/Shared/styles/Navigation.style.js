@@ -135,7 +135,7 @@ export const StyledNavLink = styled(NavLink)`
 
 export const MenuFocusedOn = styled.div`
   display: ${({ location }) =>
-    getCurrentLocationIndex(location) != -1 ? "block" : "none"};
+    getCurrentLocationIndex(location) !== -1 ? "block" : "none"};
   position: absolute;
   width: 107px;
   height: 2px;
