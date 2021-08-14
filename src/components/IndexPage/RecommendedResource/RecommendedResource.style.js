@@ -96,7 +96,7 @@ export const ResourceContentList = styled.ul`
     border-radius: 8px;
   }
 
-  ${ResourceShortcut}:last-child {
+  ${ResourceShortcut}:nth-child(5) {
     width: 174px;
     height: 181px;
     margin-left: 14px;
@@ -104,6 +104,10 @@ export const ResourceContentList = styled.ul`
     border: solid 1px #eee;
     top: -96px;
     border-radius: 8px;
+  }
+
+  ${ResourceShortcut}:nth-child(n + 6):nth-child(-n + 10) {
+    display: none;
   }
 
   @media screen and (max-width: ${MINIMUM_PC_WEBVIEW_WIDTH}) {
@@ -167,7 +171,7 @@ export const ResourceContentList = styled.ul`
       border: none;
     }
 
-    ${ResourceShortcut}:last-child {
+    ${ResourceShortcut}:nth-child(5) {
       width: 90px;
       height: 90px;
       margin: 0 8px 0 0;
@@ -179,6 +183,10 @@ export const ResourceContentList = styled.ul`
       border: none;
       top: auto;
     }
+
+    ${ResourceShortcut}:nth-child(n + 5):nth-child(-n + 10) {
+      display: block;
+    }
   }
 `;
 
@@ -188,10 +196,10 @@ export const ResourceCard = styled(Link)`
   width: auto;
   height: 100%;
 
+  border-radius: 8px;
   background-image: url(${({ img }) => img});
   background-size: 32px;
   background-repeat: no-repeat;
-  border-radius: 8px;
   background-position-y: 8px;
   background-position-x: 8px;
 

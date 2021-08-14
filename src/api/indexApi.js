@@ -4,11 +4,8 @@ export const indexApi = createApi({
   reducerPath: "indexApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.hangang.in" }),
   endpoints: (build) => ({
-    getRecommendedLectureResourcesLimit10: build.query({
-      query: () => `lecture-banks?limit=10&order=hits&page=1`,
-    }),
     getRecommendedLectureResources: build.query({
-      query: () => `lecture-banks/hit`,
+      query: () => `lecture-banks?limit=10&order=hits&page=1`,
     }),
     getLectureRankingByLecture: build.query({
       query: (departmentId) =>
