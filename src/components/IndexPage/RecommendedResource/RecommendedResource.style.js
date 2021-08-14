@@ -129,7 +129,7 @@ export const ResourceContentList = styled.ul`
       width: 40%;
     }
 
-    ${ResourceShortcut}:last-child {
+    ${ResourceShortcut}:nth-child(5) {
       width: calc((100% - 69%) - 2rem - 6px);
       margin-left: 1rem;
     }
@@ -152,7 +152,7 @@ export const ResourceContentList = styled.ul`
       width: 40%;
     }
 
-    ${ResourceShortcut}:last-child {
+    ${ResourceShortcut}:nth-child(5) {
       width: calc((100% - 68%) - 2rem - 6px);
     }
   }
