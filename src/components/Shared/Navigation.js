@@ -21,7 +21,9 @@ import {
 } from "./styles/Navigation.style";
 
 const Navigation = () => {
-  const [currentLocation, setCurrentLocation] = useState("/");
+  const [currentLocation, setCurrentLocation] = useState(
+    window.location.pathname
+  );
 
   const history = useHistory();
 
