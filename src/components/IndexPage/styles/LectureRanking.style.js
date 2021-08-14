@@ -46,7 +46,6 @@ export const LectureRankingDeptMenu = styled.ul`
   align-items: center;
   height: 40px;
   padding: 0px 12px;
-  border-bottom: 1px solid ${BorderColor};
 
   @media screen and (max-width: ${MobileViewWidth}) {
     height: 44px;
@@ -94,12 +93,15 @@ export const DepartmentName = styled.span`
 export const MenuFocusedOn = styled.div`
   display: block;
   position: relative;
-  width: 40px;
+  width: ${({ menuWidth }) => menuWidth};
   height: 2px;
 
   bottom: 2px;
   left: 7px;
   background-color: ${NoticeColor};
+
+  transition: transform 0.4s ease;
+  transform: translateX(${({ location }) => location * (42 + location * 1)}px);
 
   @media screen and (max-width: ${MobileViewWidth}) {
     width: 26px;
@@ -131,12 +133,14 @@ export const LectureRow = styled.li`
 `;
 export const LectureRankingList = styled.ul`
   min-height: 355px;
+  border-top: 1px solid #eeeeee;
 
   ${LectureRow}:last-child {
     border-bottom: none;
   }
 
   @media screen and (max-width: ${MobileViewWidth}) {
+    margin-top: -1px;
     min-height: 315px;
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   SectionTitle,
@@ -24,9 +24,13 @@ import { useGetLectureRankingByLectureQuery } from "../../api/indexApi";
 const LectureRanking = () => {
   const [majorIndex, setMajorIndex] = useState(0);
 
-  const { data, error, isLoading } = useGetLectureRankingByLectureQuery(
+  const { data, isLoading } = useGetLectureRankingByLectureQuery(
     MAJOR_LIST[majorIndex].department
   );
+
+  useEffect(() => {
+    console.log("used");
+  }, [majorIndex]);
 
   return (
     <>
@@ -45,17 +49,12 @@ const LectureRanking = () => {
             </Department>
           ))}
         </LectureRankingDeptMenu>
-        {/* <MenuFocusedOn location={majorIndex} /> */}
         <LectureRankingList>
-          {error ? (
-            <>Error</>
-          ) : isLoading ? (
-            <></>
-          ) : data ? (
+          {!isLoading &&
             data.result.map(({ id, name, professor, total_rating }, index) => {
               return (
                 <LectureRow key={index}>
-                  <Ranking index={++index} />
+                  <Ranking index={index + 1} />
                   <TitleProfessorWrapper>
                     <LectureTitle>{name}</LectureTitle>
                     <Professor>{professor}</Professor>
@@ -63,8 +62,7 @@ const LectureRanking = () => {
                   <Rating>{total_rating.toFixed(1)}</Rating>
                 </LectureRow>
               );
-            })
-          ) : null}
+            })}
         </LectureRankingList>
       </DashBoardContentBox>
     </>
