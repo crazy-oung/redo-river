@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { HANGANG_MAIN_IMG } from "../../../static/Shared/commonUrls";
+import { HANGANG_MAIN_IMG } from "../../../static/Shared/commonSvgs";
 import {
   FontColor,
   DefaultContentWidth,

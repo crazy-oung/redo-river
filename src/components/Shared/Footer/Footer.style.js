@@ -9,7 +9,7 @@ import {
   HANGANG_FOOTER_LOGO,
   FACEBOOK_ICON,
   FOOTER_HOME_ICON,
-} from "../../../static/Shared/commonUrls";
+} from "../../../static/Shared/commonSvgs";
 
 export const FooterWrapper = styled.footer`
   display: flex;

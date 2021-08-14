@@ -15,7 +15,7 @@ import {
   LECTURE_RESOURCE_ICON,
   TIMETABLE_ICON,
   USER_ICON,
-} from "../../../static/Shared/commonUrls";
+} from "../../../static/Shared/commonSvgs";
 
 const getCurrentLocationIndex = (location) => {
   let path = location.split("/");
