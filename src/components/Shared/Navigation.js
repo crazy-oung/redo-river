@@ -21,9 +21,7 @@ import {
 } from "./styles/Navigation.style";
 
 const Navigation = () => {
-  const [currentLocation, setCurrentLocation] = useState(
-    window.location.pathname
-  );
+  const [currentLocation, setCurrentLocation] = useState("/");
 
   const history = useHistory();
 
@@ -33,9 +31,11 @@ const Navigation = () => {
     });
   }, [history]);
 
+  const getAuth = () => {
+    return false;
+  };
   return (
     <NavigationWrapper>
-      {/* Desktop view navigation */}
       <NavigationSectionDesktop>
         <Link to="/">
           <Logo />
@@ -59,11 +59,19 @@ const Navigation = () => {
           </ShortcutSection>
 
           <AuthSection>
-            <AuthSectionLink to="/login">로그인</AuthSectionLink>
-            {/* <AuthSectionLink to="/my">마이페이지</AuthSectionLink> */}
-            <CenterLine />
-            <AuthSectionLink to="/signupauth">회원가입</AuthSectionLink>
-            {/* <AuthSectionLink >로그아웃</AuthSectionLink> */}
+            {getAuth() ? (
+              <>
+                <AuthSectionLink to="/my">마이페이지</AuthSectionLink>
+                <CenterLine />
+                <AuthSectionLink>로그아웃</AuthSectionLink>
+              </>
+            ) : (
+              <>
+                <AuthSectionLink to="/login">로그인</AuthSectionLink>
+                <CenterLine />
+                <AuthSectionLink to="/signupauth">회원가입</AuthSectionLink>
+              </>
+            )}
           </AuthSection>
         </LinkSection>
       </NavigationSectionDesktop>

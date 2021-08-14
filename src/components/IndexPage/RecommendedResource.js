@@ -43,7 +43,9 @@ const RecommendedResource = () => {
                       to={"/resources/" + id}
                     />
                     <LectureAndProfessor>
-                      {lecture.name}/{lecture.professor}
+                      {lecture.name}
+                      {" / "}
+                      {lecture.professor}
                     </LectureAndProfessor>
                   </ResourceShortcut>
                 )

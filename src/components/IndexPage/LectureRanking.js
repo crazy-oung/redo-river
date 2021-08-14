@@ -24,10 +24,6 @@ import { useGetLectureRankingByLectureQuery } from "../../api/indexApi";
 const LectureRanking = () => {
   const [majorIndex, setMajorIndex] = useState(0);
 
-  const getLecturRanking = (index) => {
-    setMajorIndex(index);
-  };
-
   const { data, error, isLoading } = useGetLectureRankingByLectureQuery(
     MAJOR_LIST[majorIndex].department
   );
@@ -40,7 +36,7 @@ const LectureRanking = () => {
           {MajorArray.map(({ label }, index) => (
             <Department
               onClick={() => {
-                getLecturRanking(index);
+                setMajorIndex(index);
               }}
               isPicked={majorIndex === index}
               key={label}
@@ -76,7 +72,3 @@ const LectureRanking = () => {
 };
 
 export default LectureRanking;
-
-// const getLectureRanking = (index = 0) => {
-//   return useGetLectureRankingByLectureQuery(MAJOR_LIST[index].department);
-// };

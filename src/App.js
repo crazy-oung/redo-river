@@ -21,6 +21,9 @@ const App = () => {
           <Route path="/timetable" component={IndexPage} />
           <Route path="/my" component={IndexPage} />
 
+          <Route path="/login" component={IndexPage} />
+          <Route path="/signupauth" component={IndexPage} />
+
           <Redirect from="*" to="/" />
         </Switch>
       </Main>

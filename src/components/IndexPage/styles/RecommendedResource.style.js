@@ -258,14 +258,14 @@ export const LectureAndProfessor = styled.span`
 
 const sliceTitle4PC = (title) => {
   if (title.length > 12) {
-    title = title.slice(0, 12) + "...";
+    title = title.slice(0, 12) + " ...";
   }
   return title;
 };
 
 const sliceTitle4Mobile = (title) => {
   if (title.length > 8) {
-    title = title.slice(0, 8) + "...";
+    title = title.slice(0, 8) + " ...";
   }
   return title;
 };

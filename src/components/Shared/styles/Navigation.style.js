@@ -57,6 +57,7 @@ export const NavigationSectionDesktop = styled.div`
   position: relative;
   width: ${DefaultContentWidth};
   height: 100%;
+
   align-items: center;
 `;
 
@@ -66,8 +67,8 @@ export const NavigationSectionMobile = styled.div`
   width: auto;
   height: 72px;
   bottom: 0;
-  background: #fff;
   border-top: 1.5px solid ${BorderColor};
+  background: #fff;
 
   align-items: center;
   z-index: 10;
@@ -112,6 +113,7 @@ export const StyledNavLink = styled(NavLink)`
   display: flex;
   width: 107px;
   color: ${PrimaryColor};
+
   justify-content: center;
   font-size: 17px;
   cursor: pointer;
@@ -132,10 +134,12 @@ export const StyledNavLink = styled(NavLink)`
 `;
 
 export const MenuFocusedOn = styled.div`
-  display: block;
+  display: ${({ location }) =>
+    getCurrentLocationIndex(location) != -1 ? "block" : "none"};
   position: absolute;
   width: 107px;
   height: 2px;
+
   bottom: -1px;
   background-color: ${PrimaryColor};
 
