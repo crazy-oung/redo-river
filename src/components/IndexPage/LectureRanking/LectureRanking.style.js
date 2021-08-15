@@ -10,16 +10,15 @@ import {
 } from "../../../static/Shared/commonStyles";
 
 export const Department = styled.li`
-  box-sizing: content-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 4px;
-  top: 12px;
+  width: 40px;
   height: 100%;
-
+  top: 12px;
   border-bottom: 2px solid
     ${({ isPicked }) => (isPicked ? NoticeColor : "none")};
+  box-sizing: content-box;
+  justify-content: center;
+  align-items: center;
 
   span {
     position: relative;
@@ -45,7 +44,7 @@ export const LectureRankingDeptMenu = styled.ul`
   justify-content: space-between;
   align-items: center;
   height: 40px;
-  padding: 0px 12px;
+  padding: 0px 7px;
 
   @media screen and (max-width: ${MobileViewWidth}) {
     height: 44px;
