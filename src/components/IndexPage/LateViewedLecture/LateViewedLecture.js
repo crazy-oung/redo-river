@@ -2,16 +2,16 @@ import React from "react";
 
 import {
   SectionTitle,
-  DashboardRightContentBox,
   NoResource,
   TitleProfessorWrapper,
   LectureTitle,
   ProfessorGrey,
-  Rating,
 } from "../../../pages/IndexPage/styles/IndexPage.style";
 import {
+  DashboardContentBox,
   LectureList,
   LectureRow,
+  ViewdLectureRating,
   ViewedNoReourceSection,
 } from "./LateViewedLecture.style";
 
@@ -38,7 +38,7 @@ const LateViewedLecture = () => {
   return (
     <>
       <SectionTitle>최근 본 강의</SectionTitle>
-      <DashboardRightContentBox isEmpty={getCachedLecture ? true : false}>
+      <DashboardContentBox isEmpty={getCachedLecture ? true : false}>
         {getCachedLecture != null && getCachedLecture.length !== 0 ? (
           <LectureList>
             {getCachedLecture.map(({ id, name, professor, rating }, index) => (
@@ -47,7 +47,7 @@ const LateViewedLecture = () => {
                   <LectureTitle>{name}</LectureTitle>
                   <ProfessorGrey>{professor}</ProfessorGrey>
                 </TitleProfessorWrapper>
-                <Rating>{rating.toFixed(1)}</Rating>
+                <ViewdLectureRating>{rating.toFixed(1)}</ViewdLectureRating>
               </LectureRow>
             ))}
           </LectureList>
@@ -56,7 +56,7 @@ const LateViewedLecture = () => {
             <NoResource>최근에 본 강의가 없습니다.</NoResource>
           </ViewedNoReourceSection>
         )}
-      </DashboardRightContentBox>
+      </DashboardContentBox>
     </>
   );
 };

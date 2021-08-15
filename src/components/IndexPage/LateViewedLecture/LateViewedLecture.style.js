@@ -7,13 +7,23 @@ import {
 import {
   DashboardRightContentBox,
   NoReourceSection,
+  Rating,
 } from "../../../pages/IndexPage/styles/IndexPage.style";
+
+export const DashboardContentBox = styled(DashboardRightContentBox)`
+  top: 152px;
+  overflow: scroll;
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    height: auto;
+    min-height: 120px;
+  }
+`;
 
 export const LectureRow = styled.li`
   display: flex;
   position: relative;
   width: 100%;
-  height: 70px;
   padding: 12px 20px;
   border: none;
   cursor: pointer;
@@ -27,7 +37,9 @@ export const LectureRow = styled.li`
 `;
 
 export const LectureList = styled.ul`
+  position: relative;
   padding: 12px 0;
+  height: 276px;
   width: inherit;
 
   ${LectureRow}:last-child {
@@ -35,15 +47,26 @@ export const LectureList = styled.ul`
   }
 
   @media screen and (max-width: ${MobileViewWidth}) {
+    height: auto;
     padding: 1px 0;
   }
 `;
 
-export const ViewedReourceSection = styled(DashboardRightContentBox)`
+export const ViewdLectureRating = styled(Rating)`
+  height: 27px;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+
   @media screen and (max-width: ${MobileViewWidth}) {
-    min-height: 120px;
+    top: 18px;
+    right: 16px;
   }
-  ​
 `;
 
 export const ViewedNoReourceSection = styled(NoReourceSection)`

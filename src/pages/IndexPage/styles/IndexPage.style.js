@@ -108,7 +108,6 @@ export const MajorSearchSection = styled.section`
   }
 `;
 
-// rankings
 export const DashBoardContentBox = styled.div`
   width: 100%;
   margin-top: 16px;
@@ -140,11 +139,12 @@ export const DashboardRightContentBox = styled(DashBoardContentBox)`
 
 export const TitleProfessorWrapper = styled.div`
   display: flex;
+  height: 39px;
+  width: auto;
+  margin-right: 24px;
+
   flex-direction: column;
   justify-content: space-around;
-
-  margin-right: 24px;
-  width: auto;
 
   @media screen and (max-width: ${MobileViewWidth}) {
     height: auto;
@@ -183,9 +183,12 @@ export const ProfessorGrey = styled(Professor)`
 `;
 
 export const Rating = styled.span`
+  display: flex;
   position: absolute;
+  height: 24px;
   right: 24px;
   top: 16px;
+  align-items: flex-end;
 
   font-size: 16px;
   font-weight: 500;
