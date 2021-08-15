@@ -1,16 +1,25 @@
 import styled from "styled-components";
 
+import { DashboardRightContentBox } from "../../../pages/IndexPage/styles/IndexPage.style";
 import {
   BorderColor,
   PrimaryColor,
   MobileViewWidth,
 } from "../../../static/Shared/commonStyles";
 
+export const DashboardContentBox = styled(DashboardRightContentBox)`
+  height: 276px;
+  overflow: scroll;
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    height: auto;
+  }
+`;
+
 export const TimeTableLectureRow = styled.li`
   display: flex;
   position: relative;
   width: 100%;
-  height: 70px;
   padding: 12px 20px;
   border: none;
   cursor: pointer;
@@ -40,11 +49,9 @@ export const LectureReviewButton = styled.button`
   all: unset;
   position: absolute;
   width: 60px;
-  right: 24px;
-  width: 60px;
   height: 28px;
+  right: 20px;
 
-  float: right;
   background-color: ${({ isReviewed }) =>
     isReviewed ? "#eee" : `${PrimaryColor}`};
 
@@ -60,5 +67,6 @@ export const LectureReviewButton = styled.button`
     content: "${({ isReviewed }) => (isReviewed ? "평가완료" : "평가하기")}";
   }
   @media screen and (max-width: ${MobileViewWidth}) {
+    right: 16px;
   }
 `;

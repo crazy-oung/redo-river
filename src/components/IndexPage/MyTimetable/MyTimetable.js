@@ -2,7 +2,6 @@ import React from "react";
 
 import {
   SectionTitle,
-  DashboardRightContentBox,
   TitleProfessorWrapper,
   LectureTitle,
   ProfessorGrey,
@@ -15,6 +14,7 @@ import {
   TimetableLectureList,
   TimeTableLectureRow,
   LectureReviewButton,
+  DashboardContentBox,
 } from "./MyTimetable.style";
 import { timetableLectureList } from "../../../static/IndexPage/sampleData";
 
@@ -22,7 +22,7 @@ const MyTimetable = () => {
   return (
     <>
       <SectionTitle>내 시간표</SectionTitle>
-      <DashboardRightContentBox isEmpty={timetableLectureList.length === 0}>
+      <DashboardContentBox isEmpty={timetableLectureList.length === 0}>
         {timetableLectureList.length !== 0 ? (
           <TimetableLectureList>
             {timetableLectureList.map(
@@ -45,7 +45,7 @@ const MyTimetable = () => {
             </NoResourceButtonSection>
           </NoReourceSection>
         )}
-      </DashboardRightContentBox>
+      </DashboardContentBox>
     </>
   );
 };
