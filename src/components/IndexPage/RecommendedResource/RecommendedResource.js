@@ -12,14 +12,14 @@ import {
   ResourceCard,
   LectureAndProfessor,
 } from "./RecommendedResource.style";
-import { useGetRecommendedLectureResourcesQuery } from "../../../api/indexApi";
+import { useGetLectureResourcesQuery } from "../../../api/indexApi";
 
 const RecommendedResource = () => {
   const {
     data: resourceList,
     isLoading,
     isError,
-  } = useGetRecommendedLectureResourcesQuery();
+  } = useGetLectureResourcesQuery({ limit: 10, order: "hits" });
 
   if (isError) return <div>An error has occurred!</div>;
   if (isLoading) return <></>;

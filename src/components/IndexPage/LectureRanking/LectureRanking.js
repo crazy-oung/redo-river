@@ -18,13 +18,15 @@ import {
 } from "./LectureRanking.style";
 
 import MAJOR_ARRAY from "../../../static/IndexPage/majorArray";
-import { useGetLectureRankingByLectureQuery } from "../../../api/indexApi";
+import { useGetLectureRankingByDepartmentIdQuery } from "../../../api/indexApi";
 
 const LectureRanking = () => {
   const [majorIndex, setMajorIndex] = useState(0);
-  const { data, isLoading } = useGetLectureRankingByLectureQuery(
-    MAJOR_ARRAY[majorIndex].id
-  );
+
+  const { data, isLoading } = useGetLectureRankingByDepartmentIdQuery({
+    limit: 5,
+    departmentId: MAJOR_ARRAY[majorIndex].id,
+  });
 
   return (
     <>
