@@ -25,7 +25,7 @@ export const MajorSearchContent = styled.div`
   margin-top: 16px;
 
   @media screen and (max-width: ${MobileViewWidth}) {
-    width: calc(100% + 20px);
+    width: 100%;
     margin-top: 0;
     margin-bottom: 32px;
 
@@ -36,25 +36,6 @@ export const MajorSearchContent = styled.div`
     ::-webkit-scrollbar {
       display: none; /* Chrome, Safari, Opera*/
     }
-  }
-`;
-
-export const MajorSearchContentList = styled.ul`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-
-  @media screen and (max-width: ${MINIMUM_PC_WEBVIEW_WIDTH}) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  @media screen and (max-width: ${MobileViewWidth}) {
-    width: fit-content;
-    flex-wrap: nowrap;
-
-    margin-top: 8px;
   }
 `;
 
@@ -83,6 +64,33 @@ export const MajorShortcut = styled.li`
     margin-bottom: 0;
 
     background-size: 87px 87px;
+  }
+`;
+
+export const MajorSearchContentList = styled.ul`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  @media screen and (max-width: ${MINIMUM_PC_WEBVIEW_WIDTH}) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    width: fit-content;
+    margin-top: 8px;
+
+    flex-wrap: nowrap;
+
+    ${MajorShortcut}:first-child {
+      margin-left: 16px;
+    }
+
+    ${MajorShortcut}:last-child {
+      margin-right: 16px;
+    }
   }
 `;
 
@@ -123,7 +131,6 @@ export const MajorCard = styled(Link)`
 
   @media screen and (max-width: ${MobileViewWidth}) {
     width: 87px;
-    margin-right: 8px;
 
     background-size: 87px 87px;
     background-position-y: 0;

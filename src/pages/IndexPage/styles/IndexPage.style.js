@@ -101,6 +101,10 @@ export const MajorSearchSection = styled.section`
     position: relative;
     margin-bottom: 24px;
     top: 404px;
+
+    ${SectionTitle} {
+      padding-left: 20px;
+    }
   }
 `;
 
@@ -200,6 +204,10 @@ export const Rating = styled.span`
 export const DashboardSection = styled.div`
   display: flex;
   flex-wrap: wrap;
+
+  @media screen and (max-width: ${MobileViewWidth}) {
+    padding: 0 16px;
+  }
 `;
 
 export const DashboardLeft = styled.section`

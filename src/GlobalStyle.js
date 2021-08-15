@@ -1,9 +1,6 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import {
-  DefaultContentWidth,
-  MobileViewWidth,
-} from "./static/Shared/commonStyles";
+
 export const GlobalStyle = createGlobalStyle`
   ${reset}
   @font-face {

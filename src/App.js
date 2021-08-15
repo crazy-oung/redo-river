@@ -28,8 +28,9 @@ export const Main = styled.main`
   }
 
   @media screen and (max-width: ${MobileViewWidth}) {
-    min-width: 320px;
     height: inherit;
+    padding: 0;
+    min-width: 320px;
   }
 `;
 
