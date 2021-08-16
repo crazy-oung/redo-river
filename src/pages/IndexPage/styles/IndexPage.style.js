@@ -103,7 +103,7 @@ export const MajorSearchSection = styled.section`
     top: 404px;
 
     ${SectionTitle} {
-      padding-left: 20px;
+      padding-left: 16px;
     }
   }
 `;
