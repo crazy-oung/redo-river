@@ -13,6 +13,9 @@ export const RecommendedResourceBox = styled(DashboardRightContentBox)`
   min-height: 183px;
 
   @media screen and (max-width: ${MobileViewWidth}) {
+    width: ${({ isEmpty }) => (isEmpty ? "100%" : "calc(100% + 32px)")};
+    margin-left: ${({ isEmpty }) => (isEmpty ? "0" : "-16px")};
+
     min-height: auto;
     height: auto;
   }
@@ -22,8 +25,7 @@ export const ResoruceContent = styled.div`
   width: 100%;
 
   @media screen and (max-width: ${MobileViewWidth}) {
-    width: calc(100% + 20px);
-    margin-right: -20px;
+    width: 100%;
     height: 122px;
     margin-top: 0;
 
@@ -186,6 +188,13 @@ export const ResourceContentList = styled.ul`
 
     ${ResourceShortcut}:nth-child(n + 5):nth-child(-n + 10) {
       display: block;
+    }
+
+    ${ResourceShortcut}: first-child {
+      margin: 0 8px 0 16px;
+    }
+    ${ResourceShortcut}: last-child {
+      margin: 0 16px 0 8px;
     }
   }
 `;
