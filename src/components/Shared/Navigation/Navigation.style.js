@@ -8,14 +8,6 @@ import {
   DefaultContentWidth,
   MobileViewWidth,
 } from "../../../static/Shared/commonStyles";
-import {
-  HANGANG_LOGO,
-  HOME_ICON,
-  LECTURE_REVIEW_ICON,
-  LECTURE_RESOURCE_ICON,
-  TIMETABLE_ICON,
-  USER_ICON,
-} from "../../../static/Shared/commonSvgs";
 
 const getCurrentLocationIndex = (location) => {
   let path = location.split("/");
@@ -75,16 +67,12 @@ export const NavigationSectionMobile = styled.div`
   @media screen and (max-width: ${MobileViewWidth}) {
     display: flex;
     width: 100%;
-    padding: 16px 0;
     justify-content: space-between;
     align-items: flex-end;
   }
 `;
 
-export const Logo = styled.img.attrs({
-  src: `${HANGANG_LOGO}`,
-  alt: "한강 로고",
-})`
+export const Logo = styled.figure`
   width: 80px;
   margin-right: 40px;
   cursor: pointer;
@@ -118,19 +106,49 @@ export const StyledNavLink = styled(NavLink)`
   font-size: 17px;
   cursor: pointer;
 
+  svg {
+    stroke: ${PlaceholderColor};
+  }
+
   &.selected {
     color: ${PrimaryColor};
     transition: transform 0.4s ease;
-    div {
-      background-color: ${PrimaryColor};
+
+    svg {
+      stroke: ${PrimaryColor};
     }
   }
 
   @media screen and (max-width: ${MobileViewWidth}) {
+    display: flex;
     width: calc(100% / 5);
+    padding: 16px 0;
     color: ${PlaceholderColor};
     font-size: 11px;
+
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      left: 50%;
+    }
   }
+`;
+export const MobileMenuContext = styled.div`
+  display: flex;
+  width: min-content;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+export const MobileIconFigure = styled.figure`
+  width: 24px;
+  height: 24px;
+`;
+export const MobileNavText = styled.span`
+  text-align: center;
+  line-height: normal;
+  letter-spacing: normal;
+  width: max-content;
 `;
 
 export const MenuFocusedOn = styled.div`
@@ -157,6 +175,8 @@ export const MenuFocusedOn = styled.div`
       ${({ location }) =>
         "calc( " + getCurrentLocationIndex(location) + " * (100vw / 5))"}
     );
+  }
+  :after {
   }
 `;
 
@@ -186,71 +206,4 @@ export const AuthSectionLink = styled(Link)`
   font-size: 15px;
   line-height: 20px;
   cursor: pointer;
-`;
-
-// Icons
-export const HomeIcon = styled.div`
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 16px;
-
-  background-color: ${({ isFocused }) =>
-    isFocused ? `${PrimaryColor}` : `${PlaceholderColor}`};
-
-  -webkit-mask: url(${HOME_ICON}) no-repeat center;
-  mask: url(${HOME_ICON}) no-repeat center;
-}
-`;
-
-export const LectureReviewIcon = styled.div`
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 16px;
-  background-color: ${({ isFocused }) =>
-    isFocused ? `${PrimaryColor}` : `${PlaceholderColor}`};
-
-  -webkit-mask: url(${LECTURE_REVIEW_ICON}) no-repeat center;
-  mask: url(${LECTURE_REVIEW_ICON}) no-repeat center;
-}
-`;
-
-export const LectureResourceIcon = styled.div`
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 16px;
-  background-color: ${({ isFocused }) =>
-    isFocused ? `${PrimaryColor}` : `${PlaceholderColor}`};
-
-  -webkit-mask: url(${LECTURE_RESOURCE_ICON}) no-repeat center;
-  mask: url(${LECTURE_RESOURCE_ICON}) no-repeat center;
-}
-`;
-
-export const TimetableIcon = styled.div`
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 16px;
-  background-color: ${({ isFocused }) =>
-    isFocused ? `${PrimaryColor}` : `${PlaceholderColor}`};
-
-  -webkit-mask: url(${TIMETABLE_ICON}) no-repeat center;
-  mask: url(${TIMETABLE_ICON}) no-repeat center;
-}
-`;
-
-export const MypageIcon = styled.div`
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 16px;
-  background-color: ${({ isFocused }) =>
-    isFocused ? `${PrimaryColor}` : `${PlaceholderColor}`};
-
-  -webkit-mask: url(${USER_ICON}) no-repeat center;
-  mask: url(${USER_ICON}) no-repeat center;
-}
 `;

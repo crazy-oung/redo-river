@@ -12,18 +12,25 @@ import {
   ExternalSectionButton,
   ExternalLink,
   HangangLogo,
-  FacebookIcon,
-  HomeIcon,
+  FacebookIconFigure,
+  HomeIconFigure,
   CopyRight,
 } from "./Footer.style";
+
+import { ReactComponent as FacebookIconSvg } from "../../../assets/svg/icon/footer-facebook-icon.svg";
+import { ReactComponent as HomeIconSvg } from "../../../assets/svg/icon/footer-home-icon.svg";
+import { ReactComponent as HangangMainLogoSvg } from "../../../assets/svg/logo/hangang-logo.svg";
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <FooterContent>
         <LeftSection>
-          <HangangLogo />
+          <HangangLogo>
+            <HangangMainLogoSvg fill={`rgba(255, 255, 255, 0.6)`} />
+          </HangangLogo>
         </LeftSection>
+
         <CenterSection>
           <Shortcut>
             <ShortcutLink to="/lectures">강의평</ShortcutLink>
@@ -51,16 +58,22 @@ const Footer = () => {
               <ExternalLink to="/#">개인정보 처리방침</ExternalLink>
             </ExternalSectionButton>
           </ExternalSection>
+
           <CopyRight>
             COPYRIGHT © {new Date().getFullYear()} BCSD LAB ALL RIGHTS RESERVED.
           </CopyRight>
         </CenterSection>
+
         <RightSection>
           <ExternalLink to="https://www.facebook.com/BCSD-Lab-1727922507422214/">
-            <FacebookIcon />
+            <FacebookIconFigure>
+              <FacebookIconSvg fill={`#b5b5b5`} />
+            </FacebookIconFigure>
           </ExternalLink>
           <ExternalLink to="/">
-            <HomeIcon />
+            <HomeIconFigure>
+              <HomeIconSvg fill={`#b5b5b5`} />
+            </HomeIconFigure>
           </ExternalLink>
         </RightSection>
       </FooterContent>

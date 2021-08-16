@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import { HANGANG_MAIN_IMG } from "../../../static/Shared/commonSvgs";
 import {
   FontColor,
   DefaultContentWidth,
@@ -66,14 +65,10 @@ export const TitleNormal = styled.h3`
   color: ${FontColor};
 `;
 
-export const BannerImg = styled.img.attrs({
-  src: `${HANGANG_MAIN_IMG}`,
-  alt: "banner-img",
-})`
+export const BannerImg = styled.figure`
   position: absolute;
 
   right: 0;
-  fill-opacity: 0;
 
   @media screen and (max-width: ${MINIMUM_PC_WEBVIEW_WIDTH}) {
     right: -20px;
