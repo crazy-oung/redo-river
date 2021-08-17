@@ -8,5 +8,5 @@
 
 1. Build main page
    - Due to Aug14, 2021
-   - Un finished Second Dur
+   - Unfnished Second Due
      - Second Due: Aug19, 2021
