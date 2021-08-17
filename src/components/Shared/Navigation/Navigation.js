@@ -9,16 +9,22 @@ import {
   ShortcutSection,
   LinkSection,
   StyledNavLink,
+  MobileMenuContext,
+  MobileIconFigure,
+  MobileNavText,
   MenuFocusedOn,
   AuthSection,
   AuthSectionLink,
   CenterLine,
-  HomeIcon,
-  LectureReviewIcon,
-  LectureResourceIcon,
-  TimetableIcon,
-  MypageIcon,
 } from "./Navigation.style";
+
+import { ReactComponent as HomeIconSvg } from "../../../assets/svg/icon/home.svg";
+import { ReactComponent as LectureReviewIconSvg } from "../../../assets/svg/icon/clipboard-check.svg";
+import { ReactComponent as LectureResourceIconSvg } from "../../../assets/svg/icon/document-text.svg";
+import { ReactComponent as TimetableIconSvg } from "../../../assets/svg/icon/template.svg";
+import { ReactComponent as MyPageIconSvg } from "../../../assets/svg/icon/user.svg";
+import { ReactComponent as HangangMainLogoSvg } from "../../../assets/svg/logo/hangang-logo.svg";
+import { PrimaryColor } from "../../../static/Shared/commonStyles";
 
 const Navigation = () => {
   const [currentLocation, setCurrentLocation] = useState(
@@ -40,7 +46,9 @@ const Navigation = () => {
     <NavigationWrapper>
       <NavigationSectionDesktop>
         <Link to="/">
-          <Logo />
+          <Logo>
+            <HangangMainLogoSvg fill={PrimaryColor} />
+          </Logo>
         </Link>
 
         <LinkSection>
@@ -80,24 +88,44 @@ const Navigation = () => {
 
       <NavigationSectionMobile>
         <StyledNavLink activeClassName="selected" exact to="/">
-          <HomeIcon />홈
+          <MobileMenuContext>
+            <MobileIconFigure>
+              <HomeIconSvg />
+            </MobileIconFigure>
+            <MobileNavText>홈</MobileNavText>
+          </MobileMenuContext>
         </StyledNavLink>
-
         <StyledNavLink activeClassName="selected" to="/lectures">
-          <LectureReviewIcon />
-          강의평
+          <MobileMenuContext>
+            <MobileIconFigure>
+              <LectureReviewIconSvg />
+            </MobileIconFigure>
+            <MobileNavText>강의평</MobileNavText>
+          </MobileMenuContext>
         </StyledNavLink>
         <StyledNavLink activeClassName="selected" to="/resources">
-          <LectureResourceIcon />
-          강의자료
+          <MobileMenuContext>
+            <MobileIconFigure>
+              <LectureResourceIconSvg />
+            </MobileIconFigure>
+            <MobileNavText>강의자료</MobileNavText>
+          </MobileMenuContext>
         </StyledNavLink>
         <StyledNavLink activeClassName="selected" to="/timetable">
-          <TimetableIcon />
-          시간표
+          <MobileMenuContext>
+            <MobileIconFigure>
+              <TimetableIconSvg />
+            </MobileIconFigure>
+            <MobileNavText>시간표</MobileNavText>
+          </MobileMenuContext>
         </StyledNavLink>
         <StyledNavLink activeClassName="selected" to="/my">
-          <MypageIcon />
-          마이페이지
+          <MobileMenuContext>
+            <MobileIconFigure>
+              <MyPageIconSvg />
+            </MobileIconFigure>
+            <MobileNavText>마이페이지</MobileNavText>
+          </MobileMenuContext>
         </StyledNavLink>
         <MenuFocusedOn location={currentLocation} />
       </NavigationSectionMobile>

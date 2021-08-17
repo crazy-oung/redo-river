@@ -23,6 +23,7 @@ import RecommendedResource from "../../components/IndexPage/RecommendedResource/
 import MyTimetable from "../../components/IndexPage/MyTimetable/MyTimetable";
 import LateViewedLecture from "../../components/IndexPage/LateViewedLecture/LateViewedLecture";
 
+import { ReactComponent as HangangMainSvg } from "../../assets/svg/main-illust.svg";
 import { timetableLectureList } from "../../static/IndexPage/sampleData";
 
 const IndexPage = () => {
@@ -33,7 +34,9 @@ const IndexPage = () => {
           <TitleNormal>솔직한 강의평을 원한다면?</TitleNormal>
           <TitleBold>가자, 한강으로!</TitleBold>
         </TitleSection>
-        <BannerImg />
+        <BannerImg>
+          <HangangMainSvg />
+        </BannerImg>
       </BannerSection>
 
       <MajorSearchSection>

@@ -5,11 +5,6 @@ import {
   DefaultContentWidth,
   MobileViewWidth,
 } from "../../../static/Shared/commonStyles";
-import {
-  HANGANG_FOOTER_LOGO,
-  FACEBOOK_ICON,
-  FOOTER_HOME_ICON,
-} from "../../../static/Shared/commonSvgs";
 
 export const FooterWrapper = styled.footer`
   display: flex;
@@ -52,8 +47,11 @@ export const CenterSection = styled.div`
 `;
 
 export const RightSection = styled.div`
+  display: flex;
   width: 96px;
   height: fit-content;
+  justify-content: flex-end;
+  flex-wrap: wrap;
 `;
 
 export const Shortcut = styled.div`
@@ -99,26 +97,18 @@ export const ExternalLink = styled(Link)`
   cursor: pointer;
 `;
 
-export const HangangLogo = styled.img.attrs({
-  src: HANGANG_FOOTER_LOGO,
-  alt: "한강",
-})`
+export const HangangLogo = styled.figure`
   width: 90px;
   height: 35px;
 `;
 
-export const FacebookIcon = styled.img.attrs({
-  src: FACEBOOK_ICON,
-  alt: "페이스북",
-})`
+export const FacebookIconFigure = styled.figure`
   width: 15px;
+  height: 31px;
   margin-right: 30px;
 `;
 
-export const HomeIcon = styled.img.attrs({
-  src: FOOTER_HOME_ICON,
-  alt: "홈",
-})`
+export const HomeIconFigure = styled.figure`
   width: 27px;
   height: 31px;
 `;
