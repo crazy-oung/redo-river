@@ -3,7 +3,7 @@ import React from "react";
 import {
   SectionTitle,
   NoResource,
-  TitleProfessorWrapper,
+  TitleProfessor,
   LectureTitle,
   ProfessorGrey,
 } from "../../../pages/IndexPage/styles/IndexPage.style";
@@ -43,10 +43,10 @@ const LateViewedLecture = () => {
           <LectureList>
             {getCachedLecture.map(({ id, name, professor, rating }, index) => (
               <LectureRow key={index}>
-                <TitleProfessorWrapper>
+                <TitleProfessor>
                   <LectureTitle>{name}</LectureTitle>
                   <ProfessorGrey>{professor}</ProfessorGrey>
-                </TitleProfessorWrapper>
+                </TitleProfessor>
                 <ViewdLectureRating>{rating.toFixed(1)}</ViewdLectureRating>
               </LectureRow>
             ))}

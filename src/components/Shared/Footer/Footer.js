@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  FooterWrapper,
+  StyledFooter,
   FooterContent,
   LeftSection,
   CenterSection,
@@ -23,7 +23,7 @@ import { ReactComponent as HangangMainLogoSvg } from "../../../assets/svg/logo/h
 
 const Footer = () => {
   return (
-    <FooterWrapper>
+    <StyledFooter>
       <FooterContent>
         <LeftSection>
           <HangangLogo>
@@ -77,7 +77,7 @@ const Footer = () => {
           </ExternalLink>
         </RightSection>
       </FooterContent>
-    </FooterWrapper>
+    </StyledFooter>
   );
 };
 
