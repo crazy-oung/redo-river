@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  Wrapper,
+  Index,
   BannerSection,
   TitleSection,
   TitleBold,
@@ -27,7 +27,7 @@ import { timetableLectureList } from "../../static/IndexPage/sampleData";
 
 const IndexPage = () => {
   return (
-    <Wrapper>
+    <Index>
       <BannerSection>
         <TitleSection>
           <TitleNormal>솔직한 강의평을 원한다면?</TitleNormal>
@@ -63,7 +63,7 @@ const IndexPage = () => {
           </DashboardRightBottom>
         </DashBoardRight>
       </DashboardSection>
-    </Wrapper>
+    </Index>
   );
 };
 

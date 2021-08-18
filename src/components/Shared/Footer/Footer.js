@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  FooterWrapper,
+  StyledFooter,
   FooterContent,
   LeftSection,
   CenterSection,
@@ -19,7 +19,7 @@ import {
 
 const Footer = () => {
   return (
-    <FooterWrapper>
+    <StyledFooter>
       <FooterContent>
         <LeftSection>
           <HangangLogo />
@@ -64,7 +64,7 @@ const Footer = () => {
           </ExternalLink>
         </RightSection>
       </FooterContent>
-    </FooterWrapper>
+    </StyledFooter>
   );
 };
 

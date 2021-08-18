@@ -2,7 +2,7 @@ import React from "react";
 
 import {
   SectionTitle,
-  TitleProfessorWrapper,
+  TitleProfessor,
   LectureTitle,
   ProfessorGrey,
   NoReourceSection,
@@ -28,11 +28,11 @@ const MyTimetable = () => {
             {timetableLectureList.map(
               ({ id, name, professor, is_reviewed }, index) => (
                 <TimeTableLectureRow key={index}>
-                  <TitleProfessorWrapper>
+                  <TitleProfessor>
                     <LectureTitle>{name}</LectureTitle>
                     <ProfessorGrey>{professor}</ProfessorGrey>
                     <LectureReviewButton isReviewed={is_reviewed} />
-                  </TitleProfessorWrapper>
+                  </TitleProfessor>
                 </TimeTableLectureRow>
               )
             )}

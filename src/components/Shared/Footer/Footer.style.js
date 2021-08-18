@@ -11,7 +11,7 @@ import {
   FOOTER_HOME_ICON,
 } from "../../../static/Shared/commonSvgs";
 
-export const FooterWrapper = styled.footer`
+export const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   width: 100%;

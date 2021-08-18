@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import {
-  NavigationWrapper,
+  StyledNavigation,
   NavigationSectionDesktop,
   NavigationSectionMobile,
   Logo,
@@ -37,7 +37,7 @@ const Navigation = () => {
     return false;
   };
   return (
-    <NavigationWrapper>
+    <StyledNavigation>
       <NavigationSectionDesktop>
         <Link to="/">
           <Logo />
@@ -101,7 +101,7 @@ const Navigation = () => {
         </StyledNavLink>
         <MenuFocusedOn location={currentLocation} />
       </NavigationSectionMobile>
-    </NavigationWrapper>
+    </StyledNavigation>
   );
 };
 

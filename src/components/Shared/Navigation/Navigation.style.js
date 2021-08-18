@@ -36,7 +36,7 @@ const getCurrentLocationIndex = (location) => {
   }
 };
 
-export const NavigationWrapper = styled.nav`
+export const StyledNavigation = styled.nav`
   display: flex;
   width: 100%;
   height: 80px;
