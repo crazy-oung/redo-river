@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import {
   SectionTitle,
   DashBoardContentBox,
-  TitleProfessorWrapper,
+  TitleProfessor,
   LectureTitle,
   Professor,
   Rating,
@@ -51,10 +51,10 @@ const LectureRanking = () => {
               return (
                 <LectureRow key={index}>
                   <Ranking index={index + 1} />
-                  <TitleProfessorWrapper>
+                  <TitleProfessor>
                     <LectureTitle>{name}</LectureTitle>
                     <Professor>{professor}</Professor>
-                  </TitleProfessorWrapper>
+                  </TitleProfessor>
                   <Rating>{total_rating.toFixed(1)}</Rating>
                 </LectureRow>
               );

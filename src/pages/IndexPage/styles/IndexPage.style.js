@@ -10,7 +10,7 @@ import {
 
 const MINIMUM_PC_WEBVIEW_WIDTH = `calc(${DefaultContentWidth} + 20px)`;
 
-export const Wrapper = styled.div`
+export const Index = styled.div`
   width: ${DefaultContentWidth};
   height: fit-content;
   margin: 40px auto 100px auto;
@@ -132,7 +132,7 @@ export const DashboardRightContentBox = styled(DashBoardContentBox)`
   }
 `;
 
-export const TitleProfessorWrapper = styled.div`
+export const TitleProfessor = styled.div`
   display: flex;
   height: 39px;
   width: auto;
